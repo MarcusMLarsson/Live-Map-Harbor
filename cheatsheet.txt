@@ -1,0 +1,16 @@
+
+# start zookeeper server
+zookeeper-server-start.bat ../../config/zookeeper.properties
+
+# start kafka server
+kafka-server-start.bat ../../config/server.properties
+
+# create topic
+kafka-topics.bat --zookeeper localhost:2181 --topic shipdata_topic --create --partitions 1 --replication-factor 1
+
+
+# kafka consol producer
+kafka-console-producer.bat --broker-list localhost:9092 --topic shipdata_topic
+
+# kafka consol consumer
+kafka-console-consumer --bootstrap-server localhost:9092 --shipdata_topic --from-beginning
