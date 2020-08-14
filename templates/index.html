@@ -30,9 +30,20 @@
           <!-- LEAFLET -->
           <div id="mapid" style=""></div>
           <input type="text" id="current_center"/>
-          <button id="toggleLayer"> Toggle </button>
         </div>
-   
+
+        <!-- <div class="button-overlay"> 
+        <button class="zoom-to-data-button"> Skandiahamnen </button>
+        </div> -->
+
+        <div class="btn-toolbar button-overlay" role="toolbar" aria-label="Toolbar with button groups">
+          <div class="btn-group mr-2" role="group" aria-label="First group">
+            <button type="button" class="btn btn-secondary zoom-to-skandiahamnen">Skandiahamnen</button>
+            <button type="button" class="btn btn-secondary zoom-to-energihamnen">Energihamnen</button>
+            <button type="button" class="btn btn-secondary">Övriga kajer och kryssningskajer</button>
+            <button type="button" class="btn btn-secondary">Arendals- och Älvsborgshamnen</button>
+          </div>
+    
 
 
 
@@ -157,7 +168,7 @@
       [57.697788, 11.162902]
     ]).addTo(mymap).bindPopup("I am a polygon"); */
 
-    L.polygon([
+var Skandiahamnen = L.polygon([
 [57.6939881345842,11.846866607666],
 [57.6882537505511,11.8455362319946],
 [57.6882766898951,11.8466520309448],
@@ -187,7 +198,7 @@
 
 
 
-        L.polygon([
+var Arendals1 = L.polygon([
 [57.69332299256723,11.828584671020508],
 [57.691212806038436,11.827898025512695],
 [57.69034117138915,11.828327178955078],
@@ -210,7 +221,7 @@
 
 
 
-        L.polygon([
+var Energihamnen1 = L.polygon([
 [57.69224497784799,11.797127723693848],
 [57.689045149526976,11.7942523956298835],
 [57.69039851641834,11.791548728942871],
@@ -233,7 +244,7 @@
         fillOpacity: 0.4}).addTo(mymap).bindPopup("Energihamnen"); 
 
 
-        L.polygon([
+var Energihamnen2 = L.polygon([
 [57.6955362626794,11.871500015258789],
 [57.692715179701516,11.869697570800781],
 [57.69208441971996,11.872572898864746],
@@ -249,7 +260,7 @@
         fillOpacity: 0.4}).addTo(mymap).bindPopup("Energihamnen"); 
 
 
-        L.polygon([
+var Stena =  L.polygon([
 [57.69508903246936,11.912355422973631],
 [57.69771499755552,11.9196939468383791],
 [57.696476574856696,11.921453475952148],
@@ -258,9 +269,9 @@
     ], {color: 'white', 
         fillColor: 'orange',
         weight: 2.5,
-        fillOpacity: 0.4}).addTo(mymap).bindPopup("Energihamnen"); 
+        fillOpacity: 0.4}).addTo(mymap).bindPopup("STENA GERMANICA"); 
 
-L.polygon([
+var Kajer1 = L.polygon([
 [57.702037678288434,11.946816444396973],
 [57.70089112889463,11.936430931091309],
 [57.69891897903404,11.937503814697266],
@@ -273,7 +284,7 @@ L.polygon([
         fillOpacity: 0.4}).addTo(mymap).bindPopup("Övriga kajer och kryssningskajer"); 
 
 
-L.polygon([
+var Energihamnen3 = L.polygon([
 [57.69868965231386,11.895489692687988],
 [57.69113252477638,11.89096212387085],
 [57.69057055096135,11.894266605377195],
@@ -289,7 +300,7 @@ L.polygon([
         fillOpacity: 0.4}).addTo(mymap).bindPopup("Energihamnen"); 
 
 
-L.polygon([
+var Kajer2 = L.polygon([
 [57.694687667323734,11.816085577011107],
 [57.694779408320464,11.819508075714111],
 [57.69389065763855,11.81956171989441],
@@ -301,7 +312,7 @@ L.polygon([
         fillOpacity: 0.4}).addTo(mymap).bindPopup("Övriga kajer och kryssningskajer"); 
 
 
-        L.polygon([
+var Arendals2 = L.polygon([
 [57.69131602454257,11.823070049285887],
 [57.693150971092614,11.823692321777344],
 [57.69393079523619,11.82276964187622],
@@ -316,7 +327,6 @@ L.polygon([
         fillColor: 'red',
         weight: 2.5,
         fillOpacity: 0.4}).addTo(mymap).bindPopup("Arendals- och Älvsborgshamnen"); 
-
 
 
 /*var featureGroup = L.featureGroup(markers).addto(mymap);
@@ -392,6 +402,46 @@ $(document).on('click','#toggleLayer', function(){
             mapMarkers3.push(marker3);
         }
     }, false); */
+
+
+    var zoomToDataButton = document.querySelector('.zoom-to-skandiahamnen');
+    zoomToDataButton.addEventListener('click', function () {
+    mymap.setView([57.691728895618716, 11.856651306152344], 15.5)
+    
+    Skandiahamnen.remove(mymap);
+    Arendals1.remove(mymap);
+    Energihamnen1.remove(mymap);
+    Energihamnen2.remove(mymap);
+    Stena.remove(mymap);
+    Kajer1.remove(mymap);
+    Energihamnen3.remove(mymap);
+    Kajer2.remove(mymap);
+    Arendals2.remove(mymap);
+
+    Skandiahamnen.addTo(mymap);
+    })
+
+
+    var zoomToDataButton1 = document.querySelector('.zoom-to-energihamnen');
+    zoomToDataButton1.addEventListener('click', function () {
+    mymap.setView([57.68566151114839, 11.83802604675293], 13.5)
+    
+    Skandiahamnen.remove(mymap);
+    Arendals1.remove(mymap);
+    Energihamnen1.remove(mymap);
+    Energihamnen2.remove(mymap);
+    Stena.remove(mymap);
+    Kajer1.remove(mymap);
+    Energihamnen3.remove(mymap);
+    Kajer2.remove(mymap);
+    Arendals2.remove(mymap);
+
+    Energihamnen1.addTo(mymap);
+    Energihamnen2.addTo(mymap);
+    Energihamnen3.addTo(mymap);
+    })             
+
+
 
 
     </script>

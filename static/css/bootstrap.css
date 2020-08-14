@@ -41,6 +41,7 @@
   box-sizing: border-box;
 }
 
+
 #mapid{
   position: absolute;
   top: 0;
@@ -48,6 +49,13 @@
   width: 99vw;
   height: 800px;
 } 
+
+.button-overlay {
+  position: absolute;
+  left: 15px;
+  bottom: 40px;
+  z-index: 500;
+}
 
 html {
   font-family: sans-serif;
