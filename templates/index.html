@@ -17,6 +17,7 @@
     integrity="sha512-gZwIG9x3wUXg2hdXF6+rVkLF/0Vi9U8D2Ntg4Ga5I5BZpVkVxlJWbSQtXPSiUTtC0TjtGOmxa1AJPuV0CPthew=="
     crossorigin=""></script>
     <!-- END LEAFLET -->
+    
 
     <title>Gothenburg Harbor Live Map</title>
   </head>
@@ -28,6 +29,8 @@
 
           <!-- LEAFLET -->
           <div id="mapid" style=""></div>
+          <input type="text" id="current_center"/>
+          <button id="toggleLayer"> Toggle </button>
         </div>
    
 
@@ -37,16 +40,110 @@
     <script>
     var mymap = L.map('mapid').setView([57.687788, 11.862902], 12.9);
     
-    L.tileLayer('https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?access_token={accessToken}', {
+    var mainLayer = L.tileLayer('https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?access_token={accessToken}', {
     attribution: 'Map data &copy; <a href="https://www.openstreetmap.org/">OpenStreetMap</a> contributors, <a href="https://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, Imagery © <a href="https://www.mapbox.com/">Mapbox</a>',
     maxZoom: 18,
     id: 'mapbox/streets-v11',
     tileSize: 512,
     zoomOffset: -1,
+    detectRetina:true,
     accessToken: 'pk.eyJ1IjoibWFyY3VzbGFyc3NvbiIsImEiOiJja2RyY2NuMHQwd3QzMnpvZG53M3Iwb3J5In0.CRP2By3gSeCNZpI_05eqcg'
-    }).addTo(mymap);
+    });
+
+    var waterColorLayer = L.tileLayer('https://tiles.stadiamaps.com/tiles/alidade_smooth/{z}/{x}/{y}{r}.png', {
+    attribution: 'Map data &copy; <a href="https://www.openstreetmap.org/">OpenStreetMap</a> contributors, <a href="https://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, Imagery © <a href="https://www.mapbox.com/">Mapbox</a>',
+    maxZoom: 18,
+    id: 'mapbox/streets-v11',
+    tileSize: 512,
+    zoomOffset: -1,
+    detectRetina:true,
+    accessToken: 'pk.eyJ1IjoibWFyY3VzbGFyc3NvbiIsImEiOiJja2RyY2NuMHQwd3QzMnpvZG53M3Iwb3J5In0.CRP2By3gSeCNZpI_05eqcg'
+    });
+
+    var railWay = L.tileLayer('https://{s}.tiles.openrailwaymap.org/standard/{z}/{x}/{y}.png', {
+    attribution: 'Map data &copy; <a href="https://www.openstreetmap.org/">OpenStreetMap</a> contributors, <a href="https://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, Imagery © <a href="https://www.mapbox.com/">Mapbox</a>',
+    maxZoom: 18,
+    id: 'mapbox/streets-v11',
+    tileSize: 512,
+    zoomOffset: -1,
+    detectRetina:true,
+    accessToken: 'pk.eyJ1IjoibWFyY3VzbGFyc3NvbiIsImEiOiJja2RyY2NuMHQwd3QzMnpvZG53M3Iwb3J5In0.CRP2By3gSeCNZpI_05eqcg'
+    });
+
+
+    var toner= L.tileLayer('https://stamen-tiles-{s}.a.ssl.fastly.net/toner-hybrid/{z}/{x}/{y}{r}.{ext}', {
+    attribution: 'Map data &copy; <a href="https://www.openstreetmap.org/">OpenStreetMap</a> contributors, <a href="https://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, Imagery © <a href="https://www.mapbox.com/">Mapbox</a>',
+    maxZoom: 18,
+    id: 'mapbox/streets-v11',
+    tileSize: 512,
+    zoomOffset: -1,
+    detectRetina:true,
+    accessToken: 'pk.eyJ1IjoibWFyY3VzbGFyc3NvbiIsImEiOiJja2RyY2NuMHQwd3QzMnpvZG53M3Iwb3J5In0.CRP2By3gSeCNZpI_05eqcg'
+    });
+
+
+    var OpenPtMap= L.tileLayer('http://openptmap.org/tiles/{z}/{x}/{y}.png', {
+    attribution: 'Map data &copy; <a href="https://www.openstreetmap.org/">OpenStreetMap</a> contributors, <a href="https://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, Imagery © <a href="https://www.mapbox.com/">Mapbox</a>',
+    maxZoom: 18,
+    id: 'mapbox/streets-v11',
+    tileSize: 512,
+    zoomOffset: -1,
+    detectRetina:true,
+    accessToken: 'pk.eyJ1IjoibWFyY3VzbGFyc3NvbiIsImEiOiJja2RyY2NuMHQwd3QzMnpvZG53M3Iwb3J5In0.CRP2By3gSeCNZpI_05eqcg'
+    });
+
+
+    var seaMap= L.tileLayer('https://tiles.openseamap.org/seamark/{z}/{x}/{y}.png', {
+    attribution: 'Map data &copy; <a href="https://www.openstreetmap.org/">OpenStreetMap</a> contributors, <a href="https://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, Imagery © <a href="https://www.mapbox.com/">Mapbox</a>',
+    maxZoom: 18,
+    id: 'mapbox/streets-v11',
+    tileSize: 512,
+    zoomOffset: -1,
+    detectRetina:true,
+    accessToken: 'pk.eyJ1IjoibWFyY3VzbGFyc3NvbiIsImEiOiJja2RyY2NuMHQwd3QzMnpvZG53M3Iwb3J5In0.CRP2By3gSeCNZpI_05eqcg'
+    });
+
+
+
+
+    /*var shipIcon = L.icon ({
+      iconUrl: 'https://toppng.com/uploads/preview/home-home-sea-container-ship-icon-11563195830cq8dtw2n3l.png',
+      iconSize: [38,95],
+      iconAnchor: [22,94]
+      popupAnchor: [12,-90] ?
+    }) */
+
+    var markerTest = L.marker([57.687788, 11.862902] /*, {icon:shipIcon} */); 
+
+    /*var myGeoJSON = {"type":"FeatureCollection","features":[{"type":"Feature","id":"1404d2a2-b5a4-4e7d-9185-f9df1c20f6e5","geometry":{"type":"LineString","coordinates":[[11.84567541,57.68849085],[11.84690348,57.69400361],[11.84758016,57.6971934],[11.84809308,57.69729869],[11.84852894,57.69739473],[11.84984859,57.69762406],[11.85143914,57.69790213],[11.85275476,57.69812716],[11.85360368,57.69827479],[11.85450592,57.69841616],[11.8549678,57.69845394],[11.8554226,57.69846527],[11.85634164,57.6984766],[11.8581232,57.69855859],[11.86031456,57.6986711],[11.86093147,57.69874563],[11.86141964,57.69884955],[11.86176296,57.69893984],[11.86193194,57.69900363],[11.86276074,57.69917275],[11.86280231,57.69918064],[11.86424132,57.69934188],[11.8669584,57.69963068],[11.8673956,57.69967798],[11.86796423,57.69972098],[11.86807151,57.69972313],[11.86813723,57.69279267],[11.86795216,57.69244074],[11.86799105,57.69234039],[11.86806883,57.69232821],[11.86812113,57.69234111],[11.8681493,57.69239845],[11.86823609,57.69238574],[11.8681968,57.69230416],[11.86823781,57.69228377],[11.86822038,57.69226298],[11.86816506,57.69225974],[11.86780993,57.69166446],[11.86756511,57.69170727],[11.86754697,57.69168788],[11.86785829,57.69137368],[11.86790967,57.69130341],[11.86792176,57.69124283],[11.86791571,57.69117256],[11.86785375,57.69106594],[11.86746386,57.69111881],[11.86679062,57.68995973],[11.86637354,57.69001277],[11.86630112,57.68986869],[11.86639768,57.68977909],[11.8665224,57.6896178],[11.86653715,57.68955687],[11.86650228,57.6894902],[11.86631855,57.68950669],[11.86633465,57.68953967],[11.86632258,57.68958626],[11.86629173,57.68962067],[11.86623675,57.68965221],[11.86616164,57.68966654],[11.86606911,57.68964002],[11.86599535,57.6896092],[11.86590952,57.68950669],[11.86583441,57.68938985],[11.86567885,57.68901853],[11.86564398,57.68881638],[11.86565068,57.68863717],[11.86596718,57.68858054],[11.86585319,57.6883963],[11.84567541,57.68848878]]},"properties":{"name":"Skandiahamnen"}}]}
+
+
+    L.geoJSON(myGeoJSON).addTo(mymap); */
+
+    mainLayer.addTo(mymap)
 
  
+
+    L.control.layers(
+      {
+        'Main': mainLayer,
+        'Grayscale': waterColorLayer,
+      },
+      {
+        'Ships': markerTest, 
+        'Railwaymap': railWay,
+        /*'Seamap': seaMap,*/
+      },
+    ).addTo(mymap)
+
+
+    L.control.scale().addTo(mymap)
+
+
+ 
+     
+
+
     /*L.circle([57.687788, 11.862902], 15.9, {
       color: 'red',
       fillColor: '#f03',
@@ -222,8 +319,41 @@ L.polygon([
 
 
 
-L.geoJSON(geojson).addTo(mymap);
+/*var featureGroup = L.featureGroup(markers).addto(mymap);
 
+mymap.fitBounds(featureGroup.getBounds(), {
+  padding: [20,20]
+});
+
+
+var options = {units: 'kilometers'};
+mymap.on('mousemove', function(e) {
+
+  var from = turf.point([e.latlng.lat, e.latlng.lng]);
+  markers.forEach(function(marker) {
+    var to = turf.point([marker.getLatLng().lat, marker.getLatLng().lng]);
+    var distance = turf.distance(from, to, options);
+    if(distance<100) {
+      marker.setIcon(redIcon);
+    } else {
+      marker.setIcon(blackIcon);
+    }
+  });
+})
+
+mymap.on('moveend', function(e) {
+  console.log(mymap.getCenter());
+  $('#current_center').val(mymap.getCenter.lat+','+mymap.getCenter().lng);
+});
+
+
+$(document).on('click','#toggleLayer', function(){
+  if(mymap.hasLayer(featureGroup)) {
+    mymap.removeLayer(featureGroup);
+  } else {
+    featureGroup.addTo(mymap)
+  }
+}); */
 
 
    /* mapMarkers1 = [];
