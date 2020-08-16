@@ -61,14 +61,14 @@ for IMO in IMOS:
 #df = pd.DataFrame(items)
 #df.columns = ['lat', 'lng', 'name', 'time']
 
-filename = 'ship_positions.txt'
+filename = 'ship_positions.csv'
 if os.path.exists(filename):
     append_write = 'a' # append if already exists
     fw = open(filename,append_write)
 else:
     append_write = 'w' # make a new file if not
     fw = open(filename,append_write)
-    fw.write("lat;lng;name;time\n")
+    fw.write("latitude,longitude,name,time\n")
 for item in items:
-    fw.write("%3.5f;%3.5f;%s;%s\n" % item)
+    fw.write("%3.5f,%3.5f,%s,%s\n" % item)
 fw.close()
