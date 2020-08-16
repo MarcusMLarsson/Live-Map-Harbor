@@ -1,47 +1,39 @@
-<!DOCTYPE html>
-<html>
-   <head>
-      <meta charset="utf-8">
-      <!-- Bootstrap core CSS -->
-      <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/bootstrap.css')}}">
-      <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
-      <!-- LEAFLET -->
-      <link rel="stylesheet" href="https://unpkg.com/leaflet@1.6.0/dist/leaflet.css"
-         integrity="sha512-xwE/Az9zrjBIphAcBb3F6JVqxf46+CDLwfLMHloNu6KEQCAWi6HcDUbeOfBIptF7tcCzusKFjFw2yuvEpDL9wQ=="
-         crossorigin=""/>
-      <!-- Make sure you put this AFTER Leaflet's CSS -->
-      <script src="https://unpkg.com/leaflet@1.6.0/dist/leaflet.js"
-         integrity="sha512-gZwIG9x3wUXg2hdXF6+rVkLF/0Vi9U8D2Ntg4Ga5I5BZpVkVxlJWbSQtXPSiUTtC0TjtGOmxa1AJPuV0CPthew=="
-         crossorigin=""></script>
-      <!-- END LEAFLET -->
-      <title>Gothenburg Harbor Live Map</title>
-   </head>
-   <body>
+{% extends "layout.html" %}
+ {% block content %}  
+  <title>Home</title>
+ {% endblock content %}
+ 
+ {% block content1 %}
+
+ <div class="main_content">
+   <div class="header">
+      Have a great day.
+</div>  
+   <div class="info">
+     <div id="mapid" style="">
+     </div> 
+ </div> 
+</div>
+
       
-      
-      <div class="" id="container" style="margin-top:30px;">
-      <div class="col-sm">
+    <!-- <div class="" id="container" style="margin-top:500px;"> -->
          <!-- LEAFLET -->
-         
-         <div id="mapid" style=""></div>
+       <!-- <div id="mapid" style=""></div>
          <input type="text" id="current_center"/>
-      </div>
+      </div> 
+   </div>  -->
       <!-- <div class="button-overlay"> 
          <button class="zoom-to-data-button"> Skandiahamnen </button>
          </div> -->
-      <div class="btn-toolbar button-overlay" role="toolbar" aria-label="Toolbar with button groups">
+     <!-- <div class="btn-toolbar button-overlay" role="toolbar" aria-label="Toolbar with button groups">
          <div class="btn-group mr-2" role="group" aria-label="First group">
             <button type="button" class="btn btn-secondary zoom-to-skandiahamnen">Skandiahamnen</button>
             <button type="button" class="btn btn-secondary zoom-to-energihamnen">Energihamnen</button>
             <button type="button" class="btn btn-secondary zoom-to-kajer">Övriga kajer och kryssningskajer</button>
             <button type="button" class="btn btn-secondary zoom-to-arnedals">Arendals- och Älvsborgshamnen</button>
          </div>
-      </div>
-      <!-- END LEAFLET -->
-      <!-- Bootstrap core JavaScript -->
-      <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
-      <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
-      <script src="{{ url_for('static', filename='js/bootstrap.bundle.js')}}"></script>
-      <script src="{{ url_for('static', filename='js/main.js')}}"></script>
-   </body>
-</html>
+      </div> -->
+ 
+
+
+{% endblock content1 %}
