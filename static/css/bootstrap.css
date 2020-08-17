@@ -41,6 +41,36 @@
   box-sizing: border-box;
 }
 
+
+/*.dot1 {
+  height: 15px;
+  width: 15px;
+  background-color: #0056b3;
+  border-radius: 50%;
+  display: inline-block;
+  opacity: 0.35;
+}
+
+.dot2 {
+  height: 15px;
+  width: 15px;
+  background-color: #c8374d;
+  border-radius: 50%;
+  display: inline-block;
+  opacity: 0.35;
+}
+
+.dot3 {
+  height: 15px;
+  width: 15px;
+  background-color: #f4d44c;
+  border-radius: 50%;
+  display: inline-block;
+  opacity: 0.35;
+} */
+
+
+
 *{
   margin: 0;
   padding: 0;
@@ -134,7 +164,7 @@
 .wrapper .main_content .info{
   position: relative;
   margin: 0px;
-  min-height: 95vh;
+  min-height: 100vh;
   width: 99.9%;
 }
 
@@ -2143,6 +2173,7 @@ textarea.form-control {
   position: relative;
   display: block;
   padding-left: 1.25rem;
+  z-index: 1000;
 }
 
 .form-check-input {
@@ -6629,7 +6660,7 @@ a.close.disabled {
 }
 
 .bg-primary {
-  background-color: #007bff !important;
+  background-color: #0074ba !important;
 }
 
 a.bg-primary:hover, a.bg-primary:focus,
