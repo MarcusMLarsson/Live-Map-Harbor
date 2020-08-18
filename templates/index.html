@@ -1,63 +1,84 @@
 {% extends "layout.html" %}
- {% block content %}  
-  <title>Home</title>
-   <!-- Omnivore -->
-   <script src='https://api.mapbox.com/mapbox.js/v3.3.1/mapbox.js'></script>
-   <link href='https://api.mapbox.com/mapbox.js/v3.3.1/mapbox.css' rel='stylesheet' />
-   <script src='https://api.mapbox.com/mapbox.js/plugins/leaflet-omnivore/v0.2.0/leaflet-omnivore.min.js'></script>
-
- {% endblock content %}
- 
- {% block content1 %}
-
- <div class="main_content">
-   <!-- <div class="header">
-      Have a great day.
-</div>  -->
+{% block content %}  
+<title>Home</title>
+<!-- Mapbox & Omnivore -->
+<script src='https://api.mapbox.com/mapbox.js/v3.3.1/mapbox.js'></script>
+<link href='https://api.mapbox.com/mapbox.js/v3.3.1/mapbox.css' rel='stylesheet' />
+<script src='https://api.mapbox.com/mapbox.js/plugins/leaflet-omnivore/v0.2.0/leaflet-omnivore.min.js'></script>
+{% endblock content %}
+{% block content1 %}
+<div class="main_content">
    <div class="info">
-     <div id="mapid" style="">
-      
-      <div class="form-check form-check-inline">
-         <input class="form-check-input checkbox-gbghamn" type="checkbox" id="inlineCheckbox1" value="option1">
-         <label class="form-check-label" for="inlineCheckbox1">Göteborgshamn AB</label>
-       </div>
-       <div class="form-check form-check-inline">
-         <input class="form-check-input checkbox-logistik" type="checkbox" id="inlineCheckbox2" value="option2">
-         <label class="form-check-label" for="inlineCheckbox2">Logistikområden</label>
-       </div>
-       <div class="form-check form-check-inline">
-         <input class="form-check-input checkbox-raff" type="checkbox" id="inlineCheckbox3" value="option3">
-         <label class="form-check-label" for="inlineCheckbox3">Raffinaderier </label>
-       </div>
-   
-     </div> 
- </div> 
+      <!-- Map container -->
+      <div id="mapid" style=""></div>
+      <div class="row">
+         <div class="col-11"> 
+         </div>
+         <div class="col-1">
+            <!-- Default dropleft button -->
+            <div class="btn-group dropleft">
+               <button type="button" class="btn btn-light" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+               <i class="fas fa-layer-group fa-lg"></i>
+               </button>
+               <div class="dropdown-menu">
+                  <!-- Dropdown menu links -->
+                  <span class="title-form dropdown-header"> Lager </span> 
+                  </span>
+                  <div class="form-check form-check-inline">
+                     <input class="form-check-input checkbox-gbghamn" type="checkbox" id="inlineCheckbox1" value="option1" checked>
+                     <label class="form-check-label dropdown-content" for="inlineCheckbox1">Göteborgshamn AB</label>
+                  </div>
+                  <div class="form-check form-check-inline">
+                     <input class="form-check-input checkbox-logistik" type="checkbox" id="inlineCheckbox2" value="option2" checked>
+                     <label class="form-check-label dropdown-content" for="inlineCheckbox2">Logistikområden</label>
+                  </div>
+                  <div class="form-check form-check-inline">
+                     <input class="form-check-input checkbox-raff" type="checkbox" id="inlineCheckbox3" value="option3" checked> 
+                     <label class="form-check-label dropdown-content" for="inlineCheckbox3">Raffinaderier </label>
+                  </div>
+                  <div class="form-check form-check-inline">
+                     <input class="form-check-input checkbox-skepp" type="checkbox" id="inlineCheckbox4" value="option4" checked> 
+                     <label class="form-check-label dropdown-content" for="inlineCheckbox3">Skepp </label>
+                  </div>
+                  <hr>
+                  <span class="title-form dropdown-header"> Zoom into</span> 
+                  </span>
+                  <div class="form-check">
+                     <input class="form-check-input zoom-to-home" type="radio" name="exampleRadios" id="exampleRadios1" value="option1" checked>
+                     <label class="form-check-label dropdown-content" for="exampleRadios1">
+                     Göteborgs Godsnav
+                     </label>
+                  </div>
+                  <div class="form-check">
+                     <input class="form-check-input zoom-to-skandiahamnen" type="radio" name="exampleRadios" id="exampleRadios1" value="option1">
+                     <label class="form-check-label dropdown-content" for="exampleRadios2">
+                     Skandiahamnen
+                     </label>
+                  </div>
+                  <div class="form-check">
+                     <input class="form-check-input zoom-to-energihamnen" type="radio" name="exampleRadios" id="exampleRadios2" value="option2">
+                     <label class="form-check-label dropdown-content" for="exampleRadios3">
+                     Energihamnen
+                     </label>
+                  </div>
+                  <div class="form-check">
+                     <input class="form-check-input zoom-to-kajer" type="radio" name="exampleRadios" id="exampleRadios3" value="option3">
+                     <label class="form-check-label dropdown-content" for="exampleRadios4">
+                     Övriga kajer och kryssningskajer
+                     </label>
+                  </div>
+                  <div class="form-check">
+                     <input class="form-check-input zoom-to-arendals" type="radio" name="exampleRadios" id="exampleRadios3" value="option3">
+                     <label class="form-check-label dropdown-content" for="exampleRadios5">
+                     Arendals- och Älvst
+                     </label>
+                  </div>
+               </div>
+            </div>
+         </div>
+      </div>
+  
+   </div>
 </div>
 
-
-
-
-
-
- 
-      <!-- <div class="btn-toolbar button-overlay" role="toolbar" aria-label="Toolbar with button groups">
-         <div class="btn-group mr-2 btn-group-sm" role="group" aria-label="First group">
-            <button type="button" class="btn btn-primary zoom-to-skandiahamnen">Skandiahamnen</button>
-            <button type="button" class="btn btn-primary zoom-to-energihamnen">Energihamnen</button>
-            <button type="button" class="btn btn-primary zoom-to-kajer">Övriga kajer och kryssningskajer</button>
-            <button type="button" class="btn btn-primary zoom-to-arnedals">Arendals- och Älvsborgshamnen</button>
-            <button type="button" class="btn btn-primary layer-button">Test</button>
-         </div>
-      </div>    -->
-
-
- <!-- Section: Live preview -->
-
-
- <!-- <div style="text-align:center">
-   <span class="dot1">Göteborgs Hamn AB</span>
-   <span class="dot2">Logistikområden</span>
-   <span class="dot3">Raffi</span>
- </div> -->
-   
 {% endblock content1 %}

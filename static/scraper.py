@@ -9,7 +9,8 @@ locale.setlocale(locale.LC_ALL, 'en_US') #as we need to deal with names of month
 import os
 import pandas as pd
 
-
+# Scrapes Lat, Long & Name of these vessels
+# The scraper does not overwrite the old file?
 IMOS = [9372652, 9327487, 8226612, 8646678, 8667579, 9739836, 8026361, 9342451, 8810906, 6618811, 9259513, 8327105, 9831177, 9323699, 9619907, 9274848, 9602459, 9352315, 9536583, 9548342, 8205187, 9125009, 8827052, 9769128, 9256432, 9113721,8412235, 7102998, 9371878,9125944,9651151,5422540,	8602854]
 
 

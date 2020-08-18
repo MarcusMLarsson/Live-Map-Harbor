@@ -69,8 +69,6 @@
   opacity: 0.35;
 } */
 
-
-
 *{
   margin: 0;
   padding: 0;
@@ -78,6 +76,22 @@
   list-style: none;
   text-decoration: none;
   font-family: 'Josefin Sans', sans-serif;
+}
+
+.dropdown-header{
+  margin-left: 20px !important;
+  margin-bottom: 15px !important;
+  padding: 0px !important;
+  text-decoration: none !important;
+  font-family: 'Josefin Sans', sans-serif !important;
+  color: #0074ba !important;
+  text-align: left !important;
+  font-size: 20px !important;
+}
+
+.dropdown-content{
+  font-family: 'Josefin Sans', sans-serif !important;
+  color: black !important;
 }
 
 .wrapper{
@@ -91,6 +105,11 @@
   margin-right: auto;
   width: 100px;
   margin-bottom: 15px;
+}
+
+
+.title-form{
+  margin-left:20px;
 }
 
 
@@ -170,6 +189,7 @@
 
 .wrapper .main_content .info div{
   margin-bottom: 20px;
+  z-index: 100000;
 }
 
 @media (max-height: 500px){
@@ -2172,7 +2192,7 @@ textarea.form-control {
 .form-check {
   position: relative;
   display: block;
-  padding-left: 1.25rem;
+  padding-left: 2rem;
   z-index: 1000;
 }
 
@@ -2187,7 +2207,7 @@ textarea.form-control {
 }
 
 .form-check-label {
-  margin-bottom: 0;
+  margin-bottom: 0px;
 }
 
 .form-check-inline {
@@ -2195,7 +2215,7 @@ textarea.form-control {
   display: inline-flex;
   -ms-flex-align: center;
   align-items: center;
-  padding-left: 0;
+  padding-left: 0.75rem;
   margin-right: 0.75rem;
 }
 
@@ -2776,13 +2796,13 @@ fieldset:disabled a.btn {
 }
 
 .btn-light {
-  color: #212529;
+  color: #0074ba;
   background-color: #f8f9fa;
   border-color: #f8f9fa;
 }
 
 .btn-light:hover {
-  color: #212529;
+  color: #0068a7;
   background-color: #e2e6ea;
   border-color: #dae0e5;
 }
@@ -2792,14 +2812,14 @@ fieldset:disabled a.btn {
 }
 
 .btn-light.disabled, .btn-light:disabled {
-  color: #212529;
+  color: #0068a7;
   background-color: #f8f9fa;
   border-color: #f8f9fa;
 }
 
 .btn-light:not(:disabled):not(.disabled):active, .btn-light:not(:disabled):not(.disabled).active,
 .show > .btn-light.dropdown-toggle {
-  color: #212529;
+  color: #0068a7;
   background-color: #dae0e5;
   border-color: #d3d9df;
 }
@@ -3434,6 +3454,8 @@ input[type="button"].btn-block {
   display: -ms-inline-flexbox;
   display: inline-flex;
   vertical-align: middle;
+  margin-top: 10px;
+  left: 50px;
 }
 
 .btn-group > .btn,

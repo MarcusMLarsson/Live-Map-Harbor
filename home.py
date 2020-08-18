@@ -13,7 +13,7 @@ def home():
     return render_template('index.html',token="Hello Flask+react")
 
 
-#Consumer API
+# Kafka Consumer API
 @app_file1.route('/topic/<topicname>')
 def get_messages(topicname):
     client = get_kafka_client()

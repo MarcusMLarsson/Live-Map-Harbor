@@ -8,9 +8,6 @@ from blueprints.settings import app_file6
 from blueprints.admin import app_file7
 from blueprints.support import app_file8
 
-#from blueprints. import app_file2
-
-
 
 # Flask constructure, which will create a global flask application object.
 # Pass the name to the constructure
