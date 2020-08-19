@@ -795,19 +795,28 @@ zoomToDataButton.addEventListener('click', function() {
 
 
     // Remove
-    geo1.remove(mymap);
-    geo2.remove(mymap);
-    geo3.remove(mymap);
+    //geo1.remove(mymap);
+    //geo2.remove(mymap);
+    //geo3.remove(mymap);
     geo4.remove(mymap);
     geo5.remove(mymap);
     geo6.remove(mymap);
     geo7.remove(mymap);
-    omni.remove(mymap);
+    //omni.remove(mymap);
 
     // Add
-    //mymap.addLayer(geo1);
-    //mymap.addLayer(geo2);
-    //mymap.addLayer(geo3);
+    mymap.addLayer(geo1);
+    mymap.addLayer(geo2);
+    mymap.addLayer(geo3);
+    mymap.addLayer(omni);
+
+
+    // disables checkboxes when radio button is active
+  $('input[type="radio"]').change(function() {
+  if ($(this).is(':checked')){ //radio is now checked
+      $('input[type="checkbox"]').prop('checked', true); //unchecks all checkboxes
+  }
+});
 })
 
 
