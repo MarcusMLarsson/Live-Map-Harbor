@@ -78,6 +78,7 @@
   list-style: none;
   text-decoration: none;
   font-family: 'Josefin Sans', sans-serif;
+  font-size: 18px !important;
 }
 
 .dropdown-header{
@@ -186,7 +187,7 @@
   position: relative;
   margin: 0px;
   min-height: 100vh;
-  width: 99.9%;
+  width: 99.0%; /* 99.9% */
 }
 
 .wrapper .main_content .info div{
@@ -763,8 +764,8 @@ pre code {
   display: flex;
   -ms-flex-wrap: wrap;
   flex-wrap: wrap;
-  margin-right: -15px;
-  margin-left: -15px;
+  margin-right: 15px;
+  margin-left: 15px;
 }
 
 .no-gutters {
@@ -3455,8 +3456,9 @@ input[type="button"].btn-block {
   display: -ms-inline-flexbox;
   display: inline-flex;
   vertical-align: middle;
-  margin-top: 10px;
-  left: 50px;
+  margin-top: 15px;
+  float: right;
+  /*left: 50px;*/
 }
 
 .btn-group > .btn,

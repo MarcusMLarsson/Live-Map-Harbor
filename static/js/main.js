@@ -716,7 +716,7 @@ checkbox.addEventListener('click', function() {
 // Radio buttons
 var zoomToDataButton = document.querySelector('.zoom-to-skandiahamnen');
 zoomToDataButton.addEventListener('click', function() {
-    mymap.setView([57.693728895618716, 11.856651306152344], 15)
+    mymap.flyTo([57.693728895618716, 11.856651306152344], 15)
 
     // Remove
     geo1.remove(mymap);
@@ -735,7 +735,7 @@ zoomToDataButton.addEventListener('click', function() {
 
 var zoomToDataButton = document.querySelector('.zoom-to-energihamnen');
 zoomToDataButton.addEventListener('click', function() {
-    mymap.setView([57.68966151114839, 11.85002604675293], 14)
+    mymap.flyTo([57.68966151114839, 11.85002604675293], 14)
 
     // Remove
     geo1.remove(mymap);
@@ -754,7 +754,7 @@ zoomToDataButton.addEventListener('click', function() {
 
 var zoomToDataButton = document.querySelector('.zoom-to-kajer');
 zoomToDataButton.addEventListener('click', function() {
-    mymap.setView([57.69999151114839, 11.93202604675293], 15)
+    mymap.flyTo([57.69999151114839, 11.93202604675293], 15)
 
     // Remove
     geo1.remove(mymap);
@@ -773,7 +773,7 @@ zoomToDataButton.addEventListener('click', function() {
 
 var zoomToDataButton = document.querySelector('.zoom-to-arendals');
 zoomToDataButton.addEventListener('click', function() {
-    mymap.setView([57.69266151114839, 11.83182604675293], 16)
+    mymap.flyTo([57.69266151114839, 11.83182604675293], 16)
 
     // Remove
     geo1.remove(mymap);
@@ -791,7 +791,7 @@ zoomToDataButton.addEventListener('click', function() {
 
 var zoomToDataButton = document.querySelector('.zoom-to-home');
 zoomToDataButton.addEventListener('click', function() {
-    mymap.setView([57.710088, 11.900902], 12.8);
+    mymap.flyTo([57.710088, 11.900902], 12.8);
 
 
     // Remove
@@ -914,3 +914,6 @@ source.addEventListener('message', function(e){
         mapMarkers3.push(marker3);
     }
 }, false); */
+
+
+
