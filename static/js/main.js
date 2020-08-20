@@ -708,7 +708,7 @@ checkbox.addEventListener('click', function() {
     } else {
         mymap.addLayer(omni);
     };
-})
+}) 
 
 
 
@@ -796,14 +796,14 @@ zoomToDataButton.addEventListener('click', function() {
 
 
     // Remove
-    //geo1.remove(mymap);
-    //geo2.remove(mymap);
-    //geo3.remove(mymap);
+    geo1.remove(mymap);
+    geo2.remove(mymap);
+    geo3.remove(mymap);
     geo4.remove(mymap);
     geo5.remove(mymap);
     geo6.remove(mymap);
     geo7.remove(mymap);
-    //omni.remove(mymap);
+    omni.remove(mymap);
 
     // Add
     mymap.addLayer(geo1);
@@ -824,13 +824,25 @@ zoomToDataButton.addEventListener('click', function() {
  // }
 //});
 
-$('input[type="radio"]').change(function() {
+/*$('input[type="radio"]').change(function() {
   if ($(this).is(':checked')){ //radio is now checked
       $('input[type="checkbox"]').prop('checked', true); //unchecks all checkboxes
   }
-});
+}); */
 
 
+
+$(document).ready(function(){
+  $('.my-div').hide();
+  $('.me_5').show();
+  $('.radioBtn').click(function(){
+      
+      var target = $(this).data('target-id');
+      $('.my-div').hide(); 
+      $('.my-div[data-target="'+target+'"]').show();  
+  }); 
+
+}); 
 
 
 

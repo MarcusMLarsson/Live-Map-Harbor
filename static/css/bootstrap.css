@@ -5,64 +5,6 @@
  * Licensed under MIT (https://github.com/twbs/bootstrap/blob/master/LICENSE)
  */
 
- [_nghost-ewt-c10] .explorationNavigationContent {
-  position: relative !important;
-  left: 0;
-  z-index: 0 !important;
-  overflow: hidden;
-  height: 35px;
-  background-color: transparent !important;
-  width: 0% !important;
-  outline: 0;
-}
-
-[_nghost-hdv-c10] .explorationNavigationContent {
-  position: relative !important;
-  left: 0;
-  z-index: 0 !important;
-  overflow: hidden;
-  height: 35px;
-  background-color: transparent !important;
-  width: 0% !important;
-  outline: 0;
-}
-
-[_nghost-wqj-c10] .explorationNavigationContent {
-  position: relative !important;
-  left: 0;
-  z-index: 0 !important;
-  overflow: hidden;
-  height: 35px;
-  background-color: transparent !important;
-  width: 0% !important;
-  outline: 0;
-}
-
-
-[_nghost-txi-c10] .explorationNavigationContent {
-  position: relative !important;
-  left: 0;
-  z-index: 0 !important;
-  overflow: hidden;
-  height: 35px;
-  background-color: transparent !important;
-  width: 0% !important;
-  outline: 0;
-}
-
-[_nghost-avt-c10] .explorationNavigationContent {
-  position: relative !important;
-  left: 0;
-  z-index: 0 !important;
-  overflow: hidden;
-  height: 35px;
-  background-color: transparent !important;
-  width: 0% !important;
-  outline: 0;
-}
-
-
-
 
 :root {
   --blue: #007bff;
@@ -154,6 +96,84 @@
   font-size: 18px;
 }
 
+
+.custom-control {
+  position: relative;
+  display: block;
+  min-height: 0rem !important;
+  padding-left: 1.5rem;
+}
+
+
+.pbcenter{
+  display: flex;
+  justify-content: left;
+}
+
+
+
+/* ---- checkbox area ---- */
+.black-checkbox .fill-control-input:checked~.fill-control-indicator{
+  background-color: #000;
+  border-color: #000;
+}
+.lime-green-checkbox .fill-control-input:checked~.fill-control-indicator{
+  background-color: #32cd32;
+  border-color: #32cd32;
+  opacity: 0.8;
+}
+.silver-checkbox .fill-control-input:checked~.fill-control-indicator {
+  background-color: #c0c0c0;
+  border-color: #c0c0c0;
+}
+.blue-checkbox .fill-control-input:checked~.fill-control-indicator{
+  background-color: #0056b3;
+  border-color: #0056b3;
+  opacity: 0.8;
+}
+.maroon-checkbox .fill-control-input:checked~.fill-control-indicator{
+  background-color: #c8374d;
+  border-color: #c8374d;
+  opacity: 0.8;
+}
+.brown-checkbox .fill-control-input:checked~.fill-control-indicator{
+  background-color: #654321;
+  border-color: #654321;
+}
+.khaki-checkbox .fill-control-input:checked~.fill-control-indicator{
+  background-color: #c3b091;
+  border-color: #c3b091;
+}
+.orange-checkbox .fill-control-input:checked~.fill-control-indicator{
+  background-color: #f4d44c;
+  border-color: #f4d44c;
+  opacity: 0.8;
+}
+.fill-control-input{
+  display: none;
+}
+.black-checkbox .fill-control-input:checked~.fill-control-indicator{
+  background-color: #000;
+  border-color: #000;
+  background-size: 80%;
+}
+.fill-control-indicator{
+  border-radius: 2.5px;
+  display: inline-block;
+  position: absolute;
+  top: 4px;
+  left: 0;
+  width: 16px;
+  height: 16px;
+  border: 2px solid #aaa;
+  transition: .3s;
+  background: transperent;
+  background-size: 0%;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-image: url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 8 8'%3E%3Cpath fill='%23fff' d='M6.564.75l-3.59 3.612-1.538-1.55L0 4.26 2.974 7.25 8 2.193z'/%3E%3C/svg%3E");
+}
+
 .dropdown-header{
   margin-left: 20px !important;
   margin-bottom: 15px !important;
@@ -237,8 +257,8 @@
 }
 
 .contentcontainer {
-  margin-left: 45px;
-  margin-right: 45px;
+  margin-left: 50px;
+  margin-right: 50px;
   margin-top: 30px;
   margin-bottom: 20px;
 }
@@ -361,8 +381,6 @@ position: absolute;
 }
 
 
-
-
 .button-overlay {
   position: absolute;
   left: 15px;
@@ -371,7 +389,7 @@ position: absolute;
 }
 
 html {
-  font-family: sans-serif;
+  font-family: "Segoe UI";
   line-height: 1.15;
   -webkit-text-size-adjust: 100%;
   -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
@@ -553,7 +571,7 @@ th {
 
 label {
   display: inline-block;
-  margin-bottom: 0.5rem;
+  margin-bottom: 0.2rem !important;
 }
 
 button {
@@ -611,19 +629,22 @@ button::-moz-focus-inner,
   padding: 0;
   border-style: none;
 }
-
+input[type='radio']:after
 input[type="radio"],
 input[type="checkbox"] {
   box-sizing: border-box;
   padding: 0;
+
 }
 
-input[type="date"],
-input[type="time"],
-input[type="datetime-local"],
-input[type="month"] {
-  -webkit-appearance: listbox;
+input[type='radio']:after {
+  position: relative;
+  background-color: #0056b3;
+  content: '';
+  display: inline-block;
+  visibility: visible;
 }
+
 
 textarea {
   overflow: auto;
