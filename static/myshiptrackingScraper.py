@@ -41,4 +41,7 @@ dfVesselsInPort.columns = ["Vessels in port"]
 dfActivity.to_csv(r'activity.csv', index=False)
 dfExpectedArrivals.to_csv(r'expectedArrivals.csv', index=False)
 dfVesselsInPort.to_csv(r'vesselsInPort.csv', index=False)
+dfActivity.to_json(r'activity.json')
+dfExpectedArrivals.to_json(r'expectedArrivals.json')
+dfVesselsInPort.to_json(r'vesselsInPort.json')
 

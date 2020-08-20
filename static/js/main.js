@@ -846,6 +846,17 @@ $(document).ready(function(){
 
 
 
+/*var defaultData = [];
+
+
+fetch("/static/vesselsInPort.json").then(function (response) {
+  return response.json();
+  }).then(function (data) {
+  console.log(data);
+   defaultData  = data[ 'Vessels in port' ]
+  }) */
+
+
 
 
 
@@ -927,6 +938,11 @@ source.addEventListener('message', function(e){
         mapMarkers3.push(marker3);
     }
 }, false); */
-
-
-
+$(document).ready(function () {
+  $('#dtBasicExample').DataTable({
+    "pageLength": 5,
+    "searching": false,
+    "lengthChange": false
+  });
+  $('.dataTables_length').addClass('bs-select');
+  });
