@@ -7,78 +7,197 @@
 <script src='https://api.mapbox.com/mapbox.js/plugins/leaflet-omnivore/v0.2.0/leaflet-omnivore.min.js'></script>
 {% endblock content %}
 {% block content1 %}
-<div class="main_content">
-   <div class="info">
-      <!-- Map container -->
-     <div id="mapid" ></div> 
-      <div class="row bg">
-         <div class="col-11"> 
-         </div>
-         <div class="col-1">
-            <!-- Default dropleft button -->
-            <div class="btn-group btn-group-lg dropleft">
-               <button type="button" class="btn btn-light" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-               <i class="fas fa-layer-group"></i>
-               </button>
-               <div class="dropdown-menu">
-                  <!-- Dropdown menu links -->
-                  <span class="title-form dropdown-header"> Nivåer </span> 
-                  </span>
-                  <div class="form-check form-check-inline">
+<div id="main">
+   <button class="openbtn" onclick="openNav()">☰ </button>  
+   <div class="main-container">
+      <div class="container-fluid h-100">
+         <div class="row justify-content-center h-100" id="contentcontainer">
+            <div class="col-8 hidden-md-down" id="mapcontainer">
+               <div id="map-id" class=""></div>
+            </div>
+
+            <div class="col-4 col-sm-10 col-md-10 col-lg-4 col-xl-4">
+               <div class="contentcontainer">
+
+                  
+                  <h2>Detta är godsnavet Göteborgs hamn </h2>
+                  <p> Godsnavet Göteborgs hamn består av en stor mängd aktörer och företag, totalt cirka 320 stycken. Tillsammans 
+                     utgör de den logistiktäta ytan som möjliggör för svenk industri att nyttja fördelarna med hamnära logistiklösningar.
+                     Flera av dem är spåranslutna. Hamnbolaget är en del av detta kluster 
+                  </p>
+
+                  <div class="form-check">
                      <input class="form-check-input checkbox-gbghamn" type="checkbox" id="inlineCheckbox1" value="option1" checked>
-                     <label class="form-check-label dropdown-content" for="inlineCheckbox1">Göteborgshamn AB</label>
+                     <label class="form-check-label dropdown-content" for="inlineCheckbox1">
+                        <p>Göteborgshamn stads mark som är <b>Göteborgs Hamn AB</b>
+                           ansvarar för. Hamnbolaget sköter även drift av energihamnen samt kryssningsverksamhet. Själva godshanteringen sköts av 
+                           specialiserade terminaloperatörer som sköter lossning och lastning av gods. 
+                     </label>
+
+                     
+                     <!-- <div class="form-check">
+                        <input class="form-check-input zoom-to-home" type="radio" name="exampleRadios" id="exampleRadios1" value="option1" checked>
+                        <label class="form-check-label dropdown-content" for="exampleRadios1">
+                        Göteborgs Godsnav
+                        </label>
+                     </div> -->
+
+                     <div class="form-check">
+                        <input class="form-check-input zoom-to-skandiahamnen" type="radio" name="exampleRadios" id="exampleRadios1" value="option1">
+                        <label class="form-check-label dropdown-content" for="exampleRadios2">
+                        Skandiahamnen
+                        </label>
+                     </div>
+
+                     <div class="form-check">
+                        <input class="form-check-input zoom-to-energihamnen" type="radio" name="exampleRadios" id="exampleRadios2" value="option2">
+                        <label class="form-check-label dropdown-content" for="exampleRadios3">
+                        Energihamnen
+                        </label>
+                     </div>
+
+                     <div class="form-check">
+                        <input class="form-check-input zoom-to-kajer" type="radio" name="exampleRadios" id="exampleRadios3" value="option3">
+                        <label class="form-check-label dropdown-content" for="exampleRadios4">
+                        Övriga kajer och kryssningskajer
+                        </label>
+                     </div>
+
+                     <div class="form-check">
+                        <input class="form-check-input zoom-to-arendals" type="radio" name="exampleRadios" id="exampleRadios3" value="option3">
+                        <label class="form-check-label dropdown-content" for="exampleRadios5">
+                        Arendals- och Älvst
+                        </label>
+                     </div>
+
+
+
+
                   </div>
-                  <div class="form-check form-check-inline">
+
+                
+
+                  <br>
+                  <div class="form-check">
                      <input class="form-check-input checkbox-logistik" type="checkbox" id="inlineCheckbox2" value="option2" checked>
-                     <label class="form-check-label dropdown-content" for="inlineCheckbox2">Logistikområden</label>
+                     <label class="form-check-label dropdown-content" for="inlineCheckbox2">
+                        <p><b> Logistikområden. </b> I Göteborgs hamn finns ett rikt utbud av lager och logistiktjänster. Här förbereds 
+                           godset inför sjötransporten - till exempel genom att stuffas i containrar eller byta lastbärare. Och kommer
+                           godset in via hamnens kajer finns flera importlager att nyttja  
+                        </p>
+                     </label>
                   </div>
-                  <div class="form-check form-check-inline">
+                  <div class="form-check">
                      <input class="form-check-input checkbox-raff" type="checkbox" id="inlineCheckbox3" value="option3" checked> 
-                     <label class="form-check-label dropdown-content" for="inlineCheckbox3">Raffinaderier </label>
+                     <label class="form-check-label dropdown-content" for="inlineCheckbox3">
+                        <p><b> Raffinaderier. </b> Tre raffinaderier finns i hamnens absoluta närhet, vilket innebär att
+                           engergihamnen i Göteborg är Svergies största allmänna energihamn och viktigt för energiförsörjningen i landet  
+                        </p>
+                     </label>
                   </div>
-                  <div class="form-check form-check-inline">
+                  <div class="form-check">
                      <input class="form-check-input checkbox-skepp" type="checkbox" id="inlineCheckbox4" value="option4" checked> 
-                     <label class="form-check-label dropdown-content" for="inlineCheckbox3">Skepp </label>
-                  </div>     
-                  <span class="title-form dropdown-header"> Zooma in</span> 
-                  </span>
-                  <div class="dropdown-divider"></div>
-                  <div class="form-check">
-                     <input class="form-check-input zoom-to-home" type="radio" name="exampleRadios" id="exampleRadios1" value="option1" checked>
-                     <label class="form-check-label dropdown-content" for="exampleRadios1">
-                     Göteborgs Godsnav
+                     <label class="form-check-label dropdown-content" for="inlineCheckbox3">
+                        <p><b>Skepp </b>Tre raffinaderier finns i hamnens absoluta närhet, vilket innebär att
+                           engergihamnen i Göteborg är Svergies största allmänna energihamn och viktigt för energiförsörjningen i landet   
+                        </p>
                      </label>
                   </div>
-                  <div class="form-check">
-                     <input class="form-check-input zoom-to-skandiahamnen" type="radio" name="exampleRadios" id="exampleRadios1" value="option1">
-                     <label class="form-check-label dropdown-content" for="exampleRadios2">
-                     Skandiahamnen
-                     </label>
-                  </div>
-                  <div class="form-check">
-                     <input class="form-check-input zoom-to-energihamnen" type="radio" name="exampleRadios" id="exampleRadios2" value="option2">
-                     <label class="form-check-label dropdown-content" for="exampleRadios3">
-                     Energihamnen
-                     </label>
-                  </div>
-                  <div class="form-check">
-                     <input class="form-check-input zoom-to-kajer" type="radio" name="exampleRadios" id="exampleRadios3" value="option3">
-                     <label class="form-check-label dropdown-content" for="exampleRadios4">
-                     Övriga kajer och kryssningskajer
-                     </label>
-                  </div>
-                  <div class="form-check">
-                     <input class="form-check-input zoom-to-arendals" type="radio" name="exampleRadios" id="exampleRadios3" value="option3">
-                     <label class="form-check-label dropdown-content" for="exampleRadios5">
-                     Arendals- och Älvst
-                     </label>
-                  </div>
+                  <!-- <h2> Detta är godsnavet Göteborgs hamn </h2>
+                     <p> Godsnavet Göteborgs hamn består av en stor mängd aktörer och företag, totalt cirka 320 stycken. Tillsammans 
+                        utgör de den logistiktäta ytan som möjliggör för svenk industri att nyttja fördelarna med hamnära logistiklösningar.
+                        Flera av dem är spåranslutna. Hamnbolaget är en del av detta kluster </p> -->
+
+
+
+
+                        
                </div>
             </div>
          </div>
       </div>
-  
    </div>
 </div>
-
+</div>
+<!--.main_content .info -->
+<!-- <div id="mapid" ></div> -->
+</div>
+<!--<button class="openbtn" onclick="openNav()">&#9776; Open Sidebar</button>
+   <div id="main">
+   <h2>Collapsed Sidebar</h2>
+   <p>Content...</p>
+   </div> -->
+<!-- div class="main_content">
+   <div class="info">
+   <button class="openbtn bg-primary" onclick="openNav()">&#9776; </button>
+      <!-- Map container -->
+<!-- <div id="mapid" ></div>  -->
+<!-- <div class="row bg">
+   <div class="col-11"> 
+   </div>
+   <div class="col-1">
+   
+      <div class="btn-group btn-group-lg dropleft">
+         <button type="button" class="btn btn-light" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+         <i class="fas fa-layer-group"></i>
+         </button>
+         <div class="dropdown-menu">
+   
+            <span class="title-form dropdown-header"> Nivåer </span> 
+            </span>
+            <div class="form-check form-check-inline">
+               <input class="form-check-input checkbox-gbghamn" type="checkbox" id="inlineCheckbox1" value="option1" checked>
+               <label class="form-check-label dropdown-content" for="inlineCheckbox1">Göteborgshamn AB</label>
+            </div>
+            <div class="form-check form-check-inline">
+               <input class="form-check-input checkbox-logistik" type="checkbox" id="inlineCheckbox2" value="option2" checked>
+               <label class="form-check-label dropdown-content" for="inlineCheckbox2">Logistikområden</label>
+            </div>
+            <div class="form-check form-check-inline">
+               <input class="form-check-input checkbox-raff" type="checkbox" id="inlineCheckbox3" value="option3" checked> 
+               <label class="form-check-label dropdown-content" for="inlineCheckbox3">Raffinaderier </label>
+            </div>
+            <div class="form-check form-check-inline">
+               <input class="form-check-input checkbox-skepp" type="checkbox" id="inlineCheckbox4" value="option4" checked> 
+               <label class="form-check-label dropdown-content" for="inlineCheckbox3">Skepp </label>
+            </div>     
+            <span class="title-form dropdown-header"> Zooma in</span> 
+            </span>
+            <div class="dropdown-divider"></div>
+            <div class="form-check">
+               <input class="form-check-input zoom-to-home" type="radio" name="exampleRadios" id="exampleRadios1" value="option1" checked>
+               <label class="form-check-label dropdown-content" for="exampleRadios1">
+               Göteborgs Godsnav
+               </label>
+            </div>
+            <div class="form-check">
+               <input class="form-check-input zoom-to-skandiahamnen" type="radio" name="exampleRadios" id="exampleRadios1" value="option1">
+               <label class="form-check-label dropdown-content" for="exampleRadios2">
+               Skandiahamnen
+               </label>
+            </div>
+            <div class="form-check">
+               <input class="form-check-input zoom-to-energihamnen" type="radio" name="exampleRadios" id="exampleRadios2" value="option2">
+               <label class="form-check-label dropdown-content" for="exampleRadios3">
+               Energihamnen
+               </label>
+            </div>
+            <div class="form-check">
+               <input class="form-check-input zoom-to-kajer" type="radio" name="exampleRadios" id="exampleRadios3" value="option3">
+               <label class="form-check-label dropdown-content" for="exampleRadios4">
+               Övriga kajer och kryssningskajer
+               </label>
+            </div>
+            <div class="form-check">
+               <input class="form-check-input zoom-to-arendals" type="radio" name="exampleRadios" id="exampleRadios3" value="option3">
+               <label class="form-check-label dropdown-content" for="exampleRadios5">
+               Arendals- och Älvst
+               </label>
+            </div>
+         </div>
+      </div>
+   </div>
+   </div> -->
+<!-- </div>
+   </div> -->
 {% endblock content1 %}

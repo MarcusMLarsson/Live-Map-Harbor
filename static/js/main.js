@@ -1,5 +1,5 @@
-var mymap = L.map('mapid', { zoomControl: false }).setView([57.710088, 11.900902], 12.8);
-//var mymap = L.map('mapid').setView([40.13899044275822, -75.289306640625], 8);
+var mymap = L.map('map-id', { zoomControl: false }).setView([57.710088, 11.900902], 12.8);
+//var mymap = L.map('map-id').setView([40.13899044275822, -75.289306640625], 8);
 
 // Maptype
 //var mainLayer = L.tileLayer('https://api.mapbox.com/styles/v1/marcuslarsson/ckdya9s103hdt19rpdjn3jfg8/tiles/256/{z}/{x}/{y}@2x?access_token=pk.eyJ1IjoibWFyY3VzbGFyc3NvbiIsImEiOiJja2RyY2NuMHQwd3QzMnpvZG53M3Iwb3J5In0.CRP2By3gSeCNZpI_05eqcg', {
@@ -786,6 +786,7 @@ zoomToDataButton.addEventListener('click', function() {
 
     // Add
     mymap.addLayer(geo7);
+    $("#inlineCheckbox1").prop("checked", true);
 })
 
 
@@ -809,25 +810,25 @@ zoomToDataButton.addEventListener('click', function() {
     mymap.addLayer(geo2);
     mymap.addLayer(geo3);
     mymap.addLayer(omni);
-
+    
 
     // disables checkboxes when radio button is active
-  $('input[type="radio"]').change(function() {
-  if ($(this).is(':checked')){ //radio is now checked
-      $('input[type="checkbox"]').prop('checked', true); //unchecks all checkboxes
-  }
-});
+
 })
 
 
 // disables checkboxes when radio button is active
+//$('input[type="radio"]').change(function() {
+  //if ($(this).is(':checked')){ //radio is now checked
+     // $('input[type="checkbox"]').prop('checked', false); //unchecks all checkboxes
+ // }
+//});
+
 $('input[type="radio"]').change(function() {
   if ($(this).is(':checked')){ //radio is now checked
-      $('input[type="checkbox"]').prop('checked', false); //unchecks all checkboxes
+      $('input[type="checkbox"]').prop('checked', true); //unchecks all checkboxes
   }
 });
-
-
 
 
 
