@@ -12,6 +12,8 @@ id: 'mapbox/streets-v11',
 tileSize: 512,
 zoomOffset: -1,
 detectRetina:true,
+zoomControl: true,
+infoControl: false,
 accessToken: 'pk.eyJ1IjoibWFyY3VzbGFyc3NvbiIsImEiOiJja2RyY2NuMHQwd3QzMnpvZG53M3Iwb3J5In0.CRP2By3gSeCNZpI_05eqcg'
 });
 
@@ -59,12 +61,6 @@ accessToken: 'pk.eyJ1IjoibWFyY3VzbGFyc3NvbiIsImEiOiJja2RyY2NuMHQwd3QzMnpvZG53M3I
 
 var openstreetmap=L.tileLayer('http://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png');
 
-/*var shipIcon = L.icon ({
-  iconUrl: 'https://toppng.com/uploads/preview/home-home-sea-container-ship-icon-11563195830cq8dtw2n3l.png',
-  iconSize: [38,95],
-  iconAnchor: [22,94]
-  popupAnchor: [12,-90] ?
-}) */
 
 
 // Bind popup for every ship (omnivar)
@@ -676,6 +672,14 @@ containerskandia.on('click', '.smallPolygonLink', function() {
   omni.remove(mymap);
   dropdownskandia.style.display = 'block';
   dropdownKPI.style.display = 'block'
+  /*kaj1.addTo(mymap).bindPopup("Kaj 1")
+  kaj2.addTo(mymap).bindPopup("Kaj 1")
+  kaj3.addTo(mymap).bindPopup("Kaj 1")
+  kaj4.addTo(mymap).bindPopup("Kaj 1")
+  kaj5.addTo(mymap).bindPopup("Kaj 1")
+  kaj6.addTo(mymap).bindPopup("Kaj 1") */
+
+  
 });    
 // Insert whatever you want into the container, using whichever approach you prefer
 containerskandia.html(`<div class="popup-content "><div class="popup-header"><a>Skandiahamnen</a></div>Sydatlanten 9, <br>418 34, Göteborg<br></div><br /> <a href='#' class='smallPolygonLink popup-address'>Visa mer</a>`);
@@ -690,6 +694,17 @@ var containerenergi = $('<div />');
 containerenergi.on('click', '.smallPolygonLink', function() {
   mymap.flyTo([57.68966151114839, 11.85002604675293], 14);
   mymap.closePopup();
+  geo4.remove(mymap);
+  geo6.remove(mymap);
+  geo7.remove(mymap);
+  /*kaj1.remove(mymap);
+  kaj2.remove(mymap);
+  kaj3.remove(mymap);
+  kaj4.remove(mymap);
+  kaj5.remove(mymap);
+  kaj6.remove(mymap);*/
+  dropdownskandia.style.display = 'hide';
+  dropdownKPI.style.display = 'hide'
 });    
 // Insert whatever you want into the container, using whichever approach you prefer
 containerenergi.html(`<div class="popup-content "><div class="popup-header"><a>Energihamnen</a></div>Skarvikshamnen, Ryahamnen <br>Bitumen, Torshamnen<br></div><br /> <a href='#' class='smallPolygonLink popup-address'>Visa mer</a>`);
@@ -703,6 +718,17 @@ var containerkajer = $('<div />');
 containerkajer.on('click', '.smallPolygonLink', function() {
   mymap.flyTo([57.69999151114839, 11.93202604675293], 15)
   mymap.closePopup();
+  geo4.remove(mymap);
+  geo5.remove(mymap);
+  geo7.remove(mymap);
+  /*kaj1.remove(mymap);
+  kaj2.remove(mymap);
+  kaj3.remove(mymap);
+  kaj4.remove(mymap);
+  kaj5.remove(mymap);
+  kaj6.remove(mymap);*/
+  dropdownskandia.style.display = 'hide';
+  dropdownKPI.style.display = 'hide'
 });    
 // Insert whatever you want into the container, using whichever approach you prefer
 containerkajer.html(`<div class="popup-content "><div class="popup-header"><a>Övriga kajer och kryssningskajer</a></div>Kryssningskajer </div><br /> <a href='#' class='smallPolygonLink popup-address'>Visa mer</a>`);
@@ -714,6 +740,17 @@ var containerarendals = $('<div />');
 containerarendals.on('click', '.smallPolygonLink', function() {
   mymap.flyTo([57.69266151114839, 11.83182604675293], 16)
   mymap.closePopup();
+  geo4.remove(mymap);
+  geo5.remove(mymap);
+  geo6.remove(mymap);
+ /*kaj1.remove(mymap);
+  kaj2.remove(mymap);
+  kaj3.remove(mymap);
+  kaj4.remove(mymap);
+  kaj5.remove(mymap);
+  kaj6.remove(mymap);*/
+  dropdownskandia.style.display = 'hide';
+  dropdownKPI.style.display = 'hide';
 });    
 // Insert whatever you want into the container, using whichever approach you prefer
 containerarendals.html(`<div class="popup-content "><div class="popup-header"><a>Arendals- och Älvsborgshamnen</a></div>418 34 Göteborg</div><br /> <a href='#' class='smallPolygonLink popup-address'>Visa mer</a>`);
@@ -747,8 +784,38 @@ var geo7 = L.geoJson(arendals, {style: areaStyle1, onEachFeature: onEachFeature}
     keepInView: true
 }); 
 
-var omni = omnivore.csv('/static/ship_positions.csv').addTo(mymap);
+var leafletIcon = L.icon ({
+  iconUrl: '',
+  iconSize: [38,95],
+  iconAnchor: [22,94]
+})
+
+
 mainLayer.addTo(mymap)
+
+
+var customIcon = L.icon({
+  iconUrl: '/static/fartyg.svg',
+  iconSize: [40, 30], //size of the icon in pixels
+  iconAnchor: [9, 9], //point of the icon which will correspond to marker'slocation (the center)
+  popupAnchor: [0, 0] //point from which the popup should open relative to the iconAnchor
+  });
+
+//var omni = omnivore.csv('/static/ship_positions.csv').addTo(mymap);
+
+
+
+
+var omni= omnivore.csv('/static/ship_positions.csv')
+.on('ready', function(layer) {
+    this.eachLayer(function(marker) {
+         //change the icons for each point on the map
+        marker.setIcon(customIcon);
+         //create popup with text and image - click image in popup, large  
+//mage displays in fancybox
+popuptext=marker.bindPopup('Tid: '+marker.toGeoJSON().properties.time+'<br>'+"Namn: "+marker.toGeoJSON().properties.name);});}).addTo(mymap);
+//varpopupText=marker.bindPopup(marker.toGeoJSON().properties.time+','+"<br/>"+marker.toGeoJSON().properties.name+','+"<br/>"+marker.toGeoJSON().properties.latitude+','+" <br/>"+marker.toGeoJSON().properties.longitude+','+"<br/><aclass='fancybox-thumb'rel='fancybox-button'rel='fancybox-thumb'data-fancybox-group='gallery'href='graphic/"+marker.toGeoJSON().properties.longitude+"'><imgsrc='graphic/"+marker.toGeoJSON().properties.latitude+"'style='width:100%'/></a>");});}).addTo(mymap);
+
 
 
 var zoomToDataButton = document.querySelector('.zoom-to-home');
@@ -760,7 +827,14 @@ zoomToDataButton.addEventListener('click', function() {
     mymap.addLayer(geo6);
     mymap.addLayer(geo7);
     mymap.addLayer(omni);
+ /*kaj1.remove(mymap);
+  kaj2.remove(mymap);
+  kaj3.remove(mymap);
+  kaj4.remove(mymap);
+  kaj5.remove(mymap);
+  kaj6.remove(mymap);*/
     dropdownskandia.style.display = 'none';
+    dropdownKPI.style.display = 'none';
 
 
     // Add
@@ -782,6 +856,59 @@ var checkbox  = document.querySelector('.checkbox-skepp');
         mymap.addLayer(omni);
     };
   });
+
+
+
+/*var kaj1 = L.marker([57.691333227598, 11.846802234649658] , {title: "name"});  
+var kaj2 = L.marker([57.68872400420031, 11.848518848419188] , {title: "name"});  
+var kaj3 = L.marker([57.68862077831228, 11.852853298187256] , {title: "name"});  
+var kaj4 = L.marker([57.68864371742391, 11.85675859451294] , {title: "name"});  
+var kaj5 = L.marker([57.69032970237242, 11.866521835327147] , {title: "name"});  
+var kaj6 = L.marker([57.691419242752666, 11.867508888244627] , {title: "name"});   */
+    
+
+
+/*var kaj1 = L.circle([57.691333227598, 11.846802234649658], 40, {
+  color: 'blue',
+  fillColor: '#0056b3',
+  fillOpacity: 0.5
+})
+
+var kaj2 = L.circle([57.68872400420031, 11.848518848419188], 40, {
+  color: 'blue',
+  fillColor: '#0056b3',
+  fillOpacity: 0.5
+})
+
+
+var kaj3 = L.circle([57.68862077831228, 11.852853298187256], 40, {
+  color: 'blue',
+  fillColor: '#0056b3',
+  fillOpacity: 0.5
+})
+
+
+var kaj4 = L.circle([57.68864371742391, 11.85675859451294], 40, {
+  color: 'blue',
+  fillColor: '#0056b3',
+  fillOpacity: 0.5
+})
+
+
+var kaj5 = L.circle([57.69032970237242, 11.866521835327147], 40, {
+  color: 'blue',
+  fillColor: '#0056b3',
+  fillOpacity: 0.5
+}) 
+  
+
+var kaj6 = L.circle([57.691419242752666, 11.867508888244627], 40, {
+  color: 'blue',
+  fillColor: '#0056b3',
+  fillOpacity: 0.5
+})*/ 
+
+
 
 
 /*
