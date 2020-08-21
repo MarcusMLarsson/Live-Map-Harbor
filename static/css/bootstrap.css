@@ -93,7 +93,6 @@
   list-style: none;
   text-decoration: none;
   font-family: 'Josefin Sans', sans-serif;
-  font-size: 18px;
 }
 
 
@@ -120,6 +119,29 @@
   text-align: center;
   width: 90%;
 }
+
+
+@media (max-height: 600px){
+  .sidebar-footer{
+    display: none !important;
+  }
+}
+
+.sidebar-footer{
+/*height: 50px; */
+position: absolute;
+/*margin-left: auto;
+margin-right: auto;
+left: 0;
+right: 0;
+text-align: center; */
+width: 100%;
+bottom: 0.5%;
+padding: 3px 3px;
+}
+
+
+
 
 
 /* ---- checkbox area ---- */
@@ -222,7 +244,6 @@
 
 
 .wrapper .sidebar{
-  width: 200px;
   height: 100%;
   background: white;
   padding: 10px 0px;
@@ -232,6 +253,11 @@
   z-index: 1;
   overflow-x: hidden;
   transition: 0.5s;
+  font-size: 19px;
+}
+
+.sidebar-brand {
+  font-size:19px;
 }
 
 
@@ -241,6 +267,7 @@
   border-bottom: 1px solid rgba(0,0,0,0.05);
   border-top: 1px solid rgba(255,255,255,0.05);
   transition: 0.3s; /* */
+  font-size:19px;
 }   
 
 /* Position and style the close button (top right corner) */
@@ -250,6 +277,7 @@
   right: 25px;
   font-size: 36px;
   margin-left: 50px;
+  padding: 10px 0px;
 }
 
 .openbtn:hover {
@@ -294,6 +322,7 @@
 .wrapper .sidebar ul li a{
   color: #0074ba;
   display: block;
+  margin-left:5px;
 }
 
 .wrapper .sidebar ul li a .fas{
@@ -364,7 +393,7 @@
 /* On smaller screens, where height is less than 450px, change the style of the sidenav (less padding and a smaller font size) */
 @media screen and (max-height: 450px) {
   .sidebar {padding-top: 15px;}
-  .sidebar a {font-size: 18px;}
+  .sidebar a {font-size: 19px;}
 }
 
 
