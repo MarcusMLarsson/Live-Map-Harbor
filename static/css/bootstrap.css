@@ -105,6 +105,7 @@ body {margin: 0; padding: 0;}
   list-style: none;
   text-decoration: none;
   font-family: 'Josefin Sans', sans-serif;
+  z-index:1000;
 }
 
 
@@ -153,7 +154,23 @@ padding: 3px 3px;
 }
 
 
+.fixed-row-bottom { 
+  position: fixed; 
+  bottom: 0;
+  margin-left: 8px;
+  margin-bottom: 8px;
+}
 
+.fixed-row-top { 
+  margin-top: 40px;
+}
+
+
+iframe {
+  display: block;
+  border-style:none;
+  width:100%;
+}
 
 
 /* ---- checkbox area ---- */
@@ -410,10 +427,44 @@ padding: 3px 3px;
   .sidebar a {font-size: 19px;}
 }
 
+.leaflet-popup-close-button {
+  font-size: 120%;
+  margin: .3rem;
+}
+
+
+
+
+.popup-content{
+  color: grey;
+  flex-grow: 0;
+  padding: -1rem -1rem;
+  margin: 0;
+}
+
+.popup-header{
+font-size: 130%;
+color: #0074ba;
+}
+
+
+.popup-address{
+  font-size: 100%;
+  border-top: 1px solid rgba(grey,.15);
+  /*background: lighten(powderblue,15%);
+  background-color: lighten(powderblue,15%); */
+  color: #0074ba;
+ 
+}
+.popup-address:hover{
+  text-decoration: underline;
+  font-size: 100%;
+  color: #025d96;
+  }
 
 
 #map-id {
-min-height:99vh;
+min-height:100vh;
 width: 100vw;
 position: absolute; 
 }

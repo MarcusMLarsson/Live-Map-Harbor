@@ -1,4 +1,4 @@
-var mymap = L.map('map-id', { zoomControl: false }).setView([57.710088, 11.900902], 12.8);
+var mymap = L.map('map-id', { zoomControl: false}).setView([57.700088, 11.905902], 12.8);
 //var mymap = L.map('map-id').setView([40.13899044275822, -75.289306640625], 8);
 
 // Maptype
@@ -14,6 +14,9 @@ zoomOffset: -1,
 detectRetina:true,
 accessToken: 'pk.eyJ1IjoibWFyY3VzbGFyc3NvbiIsImEiOiJja2RyY2NuMHQwd3QzMnpvZG53M3Iwb3J5In0.CRP2By3gSeCNZpI_05eqcg'
 });
+
+
+
 
 var satellite = L.tileLayer('http://{s}.google.com/vt/lyrs=s&x={x}&y={y}&z={z}',{
     maxZoom: 20,
@@ -40,6 +43,8 @@ zoomOffset: -1,
 detectRetina:true,
 accessToken: 'pk.eyJ1IjoibWFyY3VzbGFyc3NvbiIsImEiOiJja2RyY2NuMHQwd3QzMnpvZG53M3Iwb3J5In0.CRP2By3gSeCNZpI_05eqcg'
 });
+
+
 
 /*var seaMap= L.tileLayer('https://tiles.openseamap.org/seamark/{z}/{x}/{y}.png', {
 attribution: 'Map data &copy; <a href="https://www.openstreetmap.org/">OpenStreetMap</a> contributors, <a href="https://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, Imagery © <a href="https://www.mapbox.com/">Mapbox</a>',
@@ -621,10 +626,10 @@ function onEachFeature(feature, layer) {
         case 'HamnAB' : return '#0056b3' ;
         case 'Logistik' : return '#c8374d' ;
         case 'Raffinaderi' : return '#f4d44c' ;
-        case 'Skandiahamnen' : return '#ed72a9' ;
-        case 'Energihamnen' : return '#ed72a9' ;
+        case 'Skandiahamnen' : return '#c8374d' ;
+        case 'Energihamnen' : return '#0056b3' ;
         case 'Kajer' : return '#ed72a9';
-        case 'Arendals': return '#ed72a9' ;
+        case 'Arendals': return '#f4d44c' ;
         break;
       }
     };
@@ -637,7 +642,7 @@ function onEachFeature(feature, layer) {
         opacity: 1,
         color: 'white',
         /*dashArray: '3', */
-        fillOpacity: 0.35
+        fillOpacity: 0.9
       }
     };
 
@@ -647,42 +652,136 @@ function onEachFeature(feature, layer) {
         weight: 1.5,
         opacity: 1,
         color: 'white',
-        dashArray: '4', 
-        fillOpacity: 0.35
+        /*dashArray: '4',*/ 
+        fillOpacity: 0.55
       }
     };
 
 
+var dropdownskandia = document.getElementById("myDIV");
+dropdownskandia.style.display = 'none';
+
 // Create an element to hold all your text and markup
-var container = $('<div />');
-
+var containerskandia = $('<div />');
 // Delegate all event handling for the container itself and its contents to the container
-container.on('click', '.smallPolygonLink', function() {
-  mymap.flyTo([57.693728895618716, 11.856651306152344], 15)
+containerskandia.on('click', '.smallPolygonLink', function() {
+  mymap.flyTo([57.693328895618716, 11.857651306152344], 15.5)
+  mymap.closePopup();
+  geo5.remove(mymap);
+  geo6.remove(mymap);
+  geo7.remove(mymap);
+  omni.remove(mymap);
+  dropdownskandia.style.display = 'block';
+
 });    
-
-container.html("This is a link: <a href='#' class='smallPolygonLink'>Click me</a>.");
-
 // Insert whatever you want into the container, using whichever approach you prefer
-container.html("This is a link: <a href='#' class='smallPolygonLink'>Click me</a>.");
-container.append($('<span class="bold">').text(" :)"))
+containerskandia.html(`<div class="popup-content "><div class="popup-header"><a>Skandiahamnen</a></div>Sydatlanten 9, <br>418 34, Göteborg<br></div><br /> <a href='#' class='smallPolygonLink popup-address'>Visa mer</a>`);
+//container.append($('<span class="bold">').text(""))
+
+
+
+
+// Create an element to hold all your text and markup
+var containerenergi = $('<div />');
+// Delegate all event handling for the container itself and its contents to the container
+containerenergi.on('click', '.smallPolygonLink', function() {
+  mymap.flyTo([57.68966151114839, 11.85002604675293], 14);
+  mymap.closePopup();
+});    
+// Insert whatever you want into the container, using whichever approach you prefer
+containerenergi.html(`<div class="popup-content "><div class="popup-header"><a>Energihamnen</a></div>Skarvikshamnen, Ryahamnen <br>Bitumen, Torshamnen<br></div><br /> <a href='#' class='smallPolygonLink popup-address'>Visa mer</a>`);
+//container.append($('<span class="bold">').text(""))
+
+
+
+// Create an element to hold all your text and markup
+var containerkajer = $('<div />');
+// Delegate all event handling for the container itself and its contents to the container
+containerkajer.on('click', '.smallPolygonLink', function() {
+  mymap.flyTo([57.69999151114839, 11.93202604675293], 15)
+  mymap.closePopup();
+});    
+// Insert whatever you want into the container, using whichever approach you prefer
+containerkajer.html(`<div class="popup-content "><div class="popup-header"><a>Övriga kajer och kryssningskajer</a></div>Kryssningskajer </div><br /> <a href='#' class='smallPolygonLink popup-address'>Visa mer</a>`);
+//container.append($('<span class="bold">').text(""))
+// Create an element to hold all your text and markup
+
+var containerarendals = $('<div />');
+// Delegate all event handling for the container itself and its contents to the container
+containerarendals.on('click', '.smallPolygonLink', function() {
+  mymap.flyTo([57.69266151114839, 11.83182604675293], 16)
+  mymap.closePopup();
+});    
+// Insert whatever you want into the container, using whichever approach you prefer
+containerarendals.html(`<div class="popup-content "><div class="popup-header"><a>Arendals- och Älvsborgshamnen</a></div>418 34 Göteborg</div><br /> <a href='#' class='smallPolygonLink popup-address'>Visa mer</a>`);
+//container.append($('<span class="bold">').text(""))
 
 
 //var geo1 = L.geoJson(gbghamn, {style: areaStyle, onEachFeature: onEachFeature}).addTo(mymap);
 //var geo2 = L.geoJson(logistik, {style: areaStyle, onEachFeature: onEachFeature}).addTo(mymap);
 //var geo3 = L.geoJson(raff, {style: areaStyle, onEachFeature: onEachFeature}).addTo(mymap);    
-var geo4 = L.geoJson(skandiahamnen, {style: areaStyle1, onEachFeature: onEachFeature}).addTo(mymap).bindPopup(container[0]);
-var geo5 = L.geoJson(energihamn, {style: areaStyle1, onEachFeature: onEachFeature}).addTo(mymap); 
-var geo6 = L.geoJson(kajer, {style: areaStyle1, onEachFeature: onEachFeature}).addTo(mymap); 
-var geo7 = L.geoJson(arendals, {style: areaStyle1, onEachFeature: onEachFeature}).addTo(mymap); 
+var geo4 = L.geoJson(skandiahamnen, {style: areaStyle1, onEachFeature: onEachFeature}).addTo(mymap).bindPopup(containerskandia[0], {
+  loseButton: true,
+    autoClose: true,
+    keepInView: true
+});
+
+
+var geo5 = L.geoJson(energihamn, {style: areaStyle1, onEachFeature: onEachFeature}).addTo(mymap).bindPopup(containerenergi[0], {
+  loseButton: true,
+    autoClose: true,
+    keepInView: true
+}); 
+var geo6 = L.geoJson(kajer, {style: areaStyle1, onEachFeature: onEachFeature}).addTo(mymap).bindPopup(containerkajer[0], {
+  loseButton: true,
+    autoClose: true,
+    keepInView: true
+}); 
+
+var geo7 = L.geoJson(arendals, {style: areaStyle1, onEachFeature: onEachFeature}).addTo(mymap).bindPopup(containerarendals[0], {
+  loseButton: true,
+    autoClose: true,
+    keepInView: true
+}); 
+
 var omni = omnivore.csv('/static/ship_positions.csv').addTo(mymap);
 mainLayer.addTo(mymap)
 
 
-$('#map').on('click', '.trigger', function() {
-  alert('Hello from Toronto!');});
+var zoomToDataButton = document.querySelector('.zoom-to-home');
+zoomToDataButton.addEventListener('click', function() {
+    mymap.flyTo([57.700088, 11.905902], 12.8);
+    mymap.closePopup();
+    mymap.addLayer(geo4);
+    mymap.addLayer(geo5);
+    mymap.addLayer(geo6);
+    mymap.addLayer(geo7);
+    mymap.addLayer(omni);
+    dropdownskandia.style.display = 'none';
 
 
+    // Add
+    //mymap.addLayer(geo4);
+    //mymap.addLayer(geo5);
+    //mymap.addLayer(geo6);
+    //mymap.addLayer(omni);
+    
+
+    // disables checkboxes when radio button is active
+
+})
+
+var checkbox  = document.querySelector('.checkbox-skepp');
+  checkbox.addEventListener('click', function() {
+      if (mymap.hasLayer(omni)) {
+        mymap.removeLayer(omni);
+    } else {
+        mymap.addLayer(omni);
+    };
+  });
+
+
+/*
 // Checkbox
 var checkbox = document.querySelector('.checkbox-gbghamn');
 checkbox.addEventListener('click', function() {
@@ -835,7 +934,7 @@ zoomToDataButton.addEventListener('click', function() {
 
 })
 
-
+*/
 
 
 
@@ -866,6 +965,22 @@ $(document).ready(function(){
 
 }); 
 
+
+/*(function() {
+	var control = new L.Control({position:'topright'});
+	control.onAdd = function(mymap) {
+			var azoom = L.DomUtil.create('a','resetzoom');
+			azoom.innerHTML = "[Reset Zoom]";
+			L.DomEvent
+				.disableClickPropagation(azoom)
+				.addListener(azoom, 'click', function() {
+					mymap.setView(mymap.options.center, mymap.options.zoom);
+				},azoom);
+			return azoom;
+		};
+	return control;
+}())
+.addTo(mymap);
 
 
 /*var defaultData = [];
@@ -968,3 +1083,5 @@ $(document).ready(function () {
   });
   $('.dataTables_length').addClass('bs-select');
   });
+
+
