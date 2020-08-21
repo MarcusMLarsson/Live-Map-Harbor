@@ -84,7 +84,7 @@ function onEachFeature(feature, layer) {
             "fill": "#555555",
             "fill-opacity": 0.4,
             "Name": "HamnAB",
-            "popupContent": "Energihamnen",
+            "popupContent": "",
             
           },
           "geometry": {
@@ -104,7 +104,7 @@ function onEachFeature(feature, layer) {
             "fill": "#555555",
             "fill-opacity": 0.4,
             "Name": "HamnAB",
-            "popupContent": "Göteborgs hamn AB - markreserv",
+            "popupContent": "",
           },
           "geometry": {
             "type": "Polygon",
@@ -123,7 +123,7 @@ function onEachFeature(feature, layer) {
             "fill": "#555555",
             "fill-opacity": 0.5,
             "Name": "HamnAB",
-            "popupContent": "Göteborgs hamn AB",
+            "popupContent": "",
           },
           "geometry": {
             "type": "Polygon",
@@ -142,7 +142,7 @@ function onEachFeature(feature, layer) {
             "fill": "#555555",
             "fill-opacity": 0.5,
             "Name": "HamnAB",
-            "popupContent": "Energihamnen",
+            "popupContent": "",
           },
           "geometry": {
             "type": "Polygon",
@@ -161,7 +161,7 @@ function onEachFeature(feature, layer) {
             "fill": "#555555",
             "fill-opacity": 0.5,
             "Name": "HamnAB",
-            "popupContent": "Stena Line",
+            "popupContent": "",
           },
           "geometry": {
             "type": "Polygon",
@@ -180,7 +180,7 @@ function onEachFeature(feature, layer) {
             "fill": "#555555",
             "fill-opacity": 0.5,
             "Name": "HamnAB",
-            "popupContent": "Kryssningskaj",
+            "popupContent": "",
           },
           "geometry": {
             "type": "Polygon",
@@ -199,7 +199,7 @@ function onEachFeature(feature, layer) {
             "fill": "#555555",
             "fill-opacity": 0.5,
             "Name": "HamnAB",
-            "popupContent": "Stena Line",
+            "popupContent": "",
           },
           "geometry": {
             "type": "Polygon",
@@ -223,7 +223,7 @@ function onEachFeature(feature, layer) {
             "fill": "#555555",
             "fill-opacity": 0.5,
             "Name": "Logistik",
-            "popupContent": "Logistikområde",
+            "popupContent": "",
           },
           "geometry": {
             "type": "Polygon",
@@ -242,7 +242,7 @@ function onEachFeature(feature, layer) {
             "fill": "#555555",
             "fill-opacity": 0.5,
             "Name": "Logistik",
-            "popupContent": "Logistikområde",
+            "popupContent": "",
           },
           "geometry": {
             "type": "Polygon",
@@ -261,7 +261,7 @@ function onEachFeature(feature, layer) {
             "fill": "#555555",
             "fill-opacity": 0.5,
             "Name": "Logistik",
-            "popupContent": "Logistikområde",
+            "popupContent": "",
           },
           "geometry": {
             "type": "Polygon",
@@ -280,7 +280,7 @@ function onEachFeature(feature, layer) {
             "fill": "#555555",
             "fill-opacity": 0.5,
             "Name": "Logistik",
-            "popupContent": "Logistikområde",
+            "popupContent": "",
           },
           "geometry": {
             "type": "Polygon",
@@ -299,7 +299,7 @@ function onEachFeature(feature, layer) {
             "fill": "#555555",
             "fill-opacity": 0.5,
             "Name": "Logistik",
-            "popupContent": "Logistikområde",
+            "popupContent": "",
           },
           "geometry": {
             "type": "Polygon",
@@ -318,7 +318,7 @@ function onEachFeature(feature, layer) {
             "fill": "#555555",
             "fill-opacity": 0.5,
             "Name": "Logistik",
-            "popupContent": "Logistikområde",
+            "popupContent": "",
           },
           "geometry": {
             "type": "Polygon",
@@ -344,7 +344,7 @@ function onEachFeature(feature, layer) {
           "fill": "#555555",
           "fill-opacity": 0.5,
           "Name": "Raffinaderi",
-          "popupContent": "Raffinaderi",
+          "popupContent": "",
 
           },
           "geometry": {
@@ -364,7 +364,7 @@ function onEachFeature(feature, layer) {
             "fill": "#555555",
             "fill-opacity": 0.5,
             "Name": "Raffinaderi",
-            "popupContent": "Raffinaderi",
+            "popupContent": "",
           },
           "geometry": {
             "type": "Polygon",
@@ -383,7 +383,7 @@ function onEachFeature(feature, layer) {
             "fill": "#555555",
             "fill-opacity": 0.5,
             "Name": "Raffinaderi",
-            "popupContent": "Raffinaderi",
+            "popupContent": "",
           },
           "geometry": {
             "type": "Polygon",
@@ -409,7 +409,7 @@ function onEachFeature(feature, layer) {
           "fill": "#555555",
           "fill-opacity": 0.5,
           "Name": "Skandiahamnen",
-          "popupContent": "Skandiahamnen",
+          "popupContent": "",
 
           },
           "geometry": {
@@ -435,7 +435,7 @@ function onEachFeature(feature, layer) {
           "fill": "#555555",
           "fill-opacity": 0.5,
           "Name": "Energihamnen",
-          "popupContent": "Energihamnen",
+          "popupContent": "",
 
           },
           "geometry": {
@@ -455,7 +455,7 @@ function onEachFeature(feature, layer) {
             "fill": "#555555",
             "fill-opacity": 0.5,
             "Name": "Energihamnen",
-            "popupContent": "Energihamne",
+            "popupContent": "",
           },
           "geometry": {
             "type": "Polygon",
@@ -474,7 +474,7 @@ function onEachFeature(feature, layer) {
             "fill": "#555555",
             "fill-opacity": 0.5,
             "Name": "Energihamnen",
-            "popupContent": "Energihamnen",
+            "popupContent": "",
           },
           "geometry": {
             "type": "Polygon",
@@ -493,7 +493,7 @@ function onEachFeature(feature, layer) {
             "fill": "#555555",
             "fill-opacity": 0.5,
             "Name": "Energihamnen",
-            "popupContent": "Energihamnen",
+            "popupContent": "",
           },
           "geometry": {
             "type": "Polygon",
@@ -519,7 +519,7 @@ function onEachFeature(feature, layer) {
         "fill": "#555555",
         "fill-opacity": 0.5,
         "Name": "Kajer",
-        "popupContent": "Stena Line",
+        "popupContent": "",
       },
       "geometry": {
         "type": "Polygon",
@@ -538,7 +538,7 @@ function onEachFeature(feature, layer) {
         "fill": "#555555",
         "fill-opacity": 0.5,
         "Name": "Kajer",
-        "popupContent": "Kryssningskaj",
+        "popupContent": "",
       },
       "geometry": {
         "type": "Polygon",
@@ -557,7 +557,7 @@ function onEachFeature(feature, layer) {
         "fill": "#555555",
         "fill-opacity": 0.5,
         "Name": "Kajer",
-        "popupContent": "Stena Line",
+        "popupContent": "",
       },
       "geometry": {
         "type": "Polygon",
@@ -582,7 +582,7 @@ function onEachFeature(feature, layer) {
         "fill": "#555555",
         "fill-opacity": 0.5,
         "Name": "Arendals",
-        "popupContent": " Arendals- och Älvsborgshamnen",
+        "popupContent": "",
       },
       "geometry": {
         "type": "Polygon",
@@ -601,7 +601,7 @@ function onEachFeature(feature, layer) {
         "fill": "#555555",
         "fill-opacity": 0.5,
         "Name": "Arendals",
-        "popupContent": "Arendals- och Älvsborgshamnen",
+        "popupContent": "",
       },
       "geometry": {
         "type": "Polygon",
@@ -630,7 +630,7 @@ function onEachFeature(feature, layer) {
     };
     
     // set style for polygones
-    function areaStyle(feature){
+   function areaStyle(feature){
       return {
         fillColor: getAreaColor(feature),
         weight: 1.5,
@@ -641,7 +641,7 @@ function onEachFeature(feature, layer) {
       }
     };
 
-    function areaStyle1(feature){
+  function areaStyle1(feature){
       return {
         fillColor: getAreaColor(feature),
         weight: 1.5,
@@ -653,15 +653,34 @@ function onEachFeature(feature, layer) {
     };
 
 
-var geo1 = L.geoJson(gbghamn, {style: areaStyle, onEachFeature: onEachFeature}).addTo(mymap);
-var geo2 = L.geoJson(logistik, {style: areaStyle, onEachFeature: onEachFeature}).addTo(mymap);
-var geo3 = L.geoJson(raff, {style: areaStyle, onEachFeature: onEachFeature}).addTo(mymap);    
-var geo4 = L.geoJson(skandiahamnen, {style: areaStyle1, onEachFeature: onEachFeature})
-var geo5 = L.geoJson(energihamn, {style: areaStyle1, onEachFeature: onEachFeature})
-var geo6 = L.geoJson(kajer, {style: areaStyle1, onEachFeature: onEachFeature})
-var geo7 = L.geoJson(arendals, {style: areaStyle1, onEachFeature: onEachFeature})
+// Create an element to hold all your text and markup
+var container = $('<div />');
+
+// Delegate all event handling for the container itself and its contents to the container
+container.on('click', '.smallPolygonLink', function() {
+  mymap.flyTo([57.693728895618716, 11.856651306152344], 15)
+});    
+
+container.html("This is a link: <a href='#' class='smallPolygonLink'>Click me</a>.");
+
+// Insert whatever you want into the container, using whichever approach you prefer
+container.html("This is a link: <a href='#' class='smallPolygonLink'>Click me</a>.");
+container.append($('<span class="bold">').text(" :)"))
+
+
+//var geo1 = L.geoJson(gbghamn, {style: areaStyle, onEachFeature: onEachFeature}).addTo(mymap);
+//var geo2 = L.geoJson(logistik, {style: areaStyle, onEachFeature: onEachFeature}).addTo(mymap);
+//var geo3 = L.geoJson(raff, {style: areaStyle, onEachFeature: onEachFeature}).addTo(mymap);    
+var geo4 = L.geoJson(skandiahamnen, {style: areaStyle1, onEachFeature: onEachFeature}).addTo(mymap).bindPopup(container[0]);
+var geo5 = L.geoJson(energihamn, {style: areaStyle1, onEachFeature: onEachFeature}).addTo(mymap); 
+var geo6 = L.geoJson(kajer, {style: areaStyle1, onEachFeature: onEachFeature}).addTo(mymap); 
+var geo7 = L.geoJson(arendals, {style: areaStyle1, onEachFeature: onEachFeature}).addTo(mymap); 
 var omni = omnivore.csv('/static/ship_positions.csv').addTo(mymap);
 mainLayer.addTo(mymap)
+
+
+$('#map').on('click', '.trigger', function() {
+  alert('Hello from Toronto!');});
 
 
 // Checkbox
@@ -815,6 +834,9 @@ zoomToDataButton.addEventListener('click', function() {
     // disables checkboxes when radio button is active
 
 })
+
+
+
 
 
 // disables checkboxes when radio button is active
