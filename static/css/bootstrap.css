@@ -166,12 +166,18 @@ padding: 3px 3px;
 }
 
 
-iframe {
+#iframe {
   display: block;
   border-style:none;
   width:100%;
 }
 
+
+.top-corner{
+  position: fixed;
+  right: 0px;
+  top: 0px;
+}
 
 /* ---- checkbox area ---- */
 .black-checkbox .fill-control-input:checked~.fill-control-indicator{
@@ -3722,7 +3728,7 @@ input[type="button"].btn-block {
   display: -ms-inline-flexbox;
   display: inline-flex;
   vertical-align: middle;
-  margin-top: 15px;
+  margin-top: 0px;
   float: right;
   /*left: 50px;*/
 }

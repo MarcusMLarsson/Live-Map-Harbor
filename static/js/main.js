@@ -661,6 +661,9 @@ function onEachFeature(feature, layer) {
 var dropdownskandia = document.getElementById("myDIV");
 dropdownskandia.style.display = 'none';
 
+var dropdownKPI = document.getElementById("myDIV1");
+dropdownKPI.style.display = 'none';
+
 // Create an element to hold all your text and markup
 var containerskandia = $('<div />');
 // Delegate all event handling for the container itself and its contents to the container
@@ -672,7 +675,7 @@ containerskandia.on('click', '.smallPolygonLink', function() {
   geo7.remove(mymap);
   omni.remove(mymap);
   dropdownskandia.style.display = 'block';
-
+  dropdownKPI.style.display = 'block'
 });    
 // Insert whatever you want into the container, using whichever approach you prefer
 containerskandia.html(`<div class="popup-content "><div class="popup-header"><a>Skandiahamnen</a></div>Sydatlanten 9, <br>418 34, Göteborg<br></div><br /> <a href='#' class='smallPolygonLink popup-address'>Visa mer</a>`);
