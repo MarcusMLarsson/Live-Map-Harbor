@@ -23,4 +23,4 @@ def get_messages(topicname):
     return Response(events(), mimetype="text/event-stream")
 
 if __name__ == '__main__':
-    app_file1.run(port=5001)
+    app_file1.run(host="0.0.0.0")
