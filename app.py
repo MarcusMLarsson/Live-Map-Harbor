@@ -25,5 +25,5 @@ main_app.register_blueprint(app_file8)
 
 
 if __name__ == '__main__':
-    main_app.run(debug=True, use_reloader=False)
-    #main_app.run(host="0.0.0.0")
+    #main_app.run(debug=True, use_reloader=False)
+    main_app.run(host="0.0.0.0")

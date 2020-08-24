@@ -17,9 +17,6 @@ infoControl: false,
 accessToken: 'pk.eyJ1IjoibWFyY3VzbGFyc3NvbiIsImEiOiJja2RyY2NuMHQwd3QzMnpvZG53M3Iwb3J5In0.CRP2By3gSeCNZpI_05eqcg'
 });
 
-
-
-
 var satellite = L.tileLayer('http://{s}.google.com/vt/lyrs=s&x={x}&y={y}&z={z}',{
     maxZoom: 20,
     subdomains:['mt0','mt1','mt2','mt3']
