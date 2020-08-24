@@ -657,8 +657,8 @@ function onEachFeature(feature, layer) {
 var dropdownskandia = document.getElementById("myDIV");
 dropdownskandia.style.display = 'none';
 
-var dropdownKPI = document.getElementById("myDIV1");
-dropdownKPI.style.display = 'none';
+//var dropdownKPI = document.getElementById("myDIV1");
+//dropdownKPI.style.display = 'none';
 
 // Create an element to hold all your text and markup
 var containerskandia = $('<div />');
@@ -669,15 +669,14 @@ containerskandia.on('click', '.smallPolygonLink', function() {
   geo5.remove(mymap);
   geo6.remove(mymap);
   geo7.remove(mymap);
-  omni.remove(mymap);
   dropdownskandia.style.display = 'block';
-  dropdownKPI.style.display = 'block'
-  /*kaj1.addTo(mymap).bindPopup("Kaj 1")
-  kaj2.addTo(mymap).bindPopup("Kaj 1")
-  kaj3.addTo(mymap).bindPopup("Kaj 1")
-  kaj4.addTo(mymap).bindPopup("Kaj 1")
-  kaj5.addTo(mymap).bindPopup("Kaj 1")
-  kaj6.addTo(mymap).bindPopup("Kaj 1") */
+  //dropdownKPI.style.display = 'block'
+  kaj1.addTo(mymap).bindPopup("<h1><b>Kaj 640-643</b></h1>" + "Sjökortsdjup: 10.0-11.0 meter" + "</br> Max djupgående: 9,50-10,50 meter" + "</br> Maxlängd fartyg: 250-300* meter"+ "</br> Riktning kaj: 007/187"+ "</br> Kajhöjd: 2,50 meter")
+  kaj2.addTo(mymap).bindPopup("<h1><b>Kaj 615</b></h1>" + "Sjökortsdjup: 11 meter meter" + "</br> Max djupgående: 10,5 meter" + "</br> Maxlängd fartyg: 200 meter"+ "</br> Riktning kaj: 090/270"+ "</br> Kajhöjd: 2,50 meter")
+  kaj3.addTo(mymap).bindPopup("<h1><b>Kaj 613-614</b></h1>" + "Sjökortsdjup: 11,50 meter" + "</br> Max djupgående: 11,50 meter" + "</br> Maxlängd fartyg: 390 meter"+ "</br> Riktning kaj: 090/270"+ "</br> Kajhöjd: 2,50 meter")
+  kaj4.addTo(mymap).bindPopup("<h1><b>Kaj 610-612</b></h1>" + "Sjökortsdjup: 14,20* meter" + "</br> Max djupgående: 13,50 meter" + "</br> Maxlängd fartyg: 400 meter"+ "</br> Riktning kaj: 090/270"+ "</br> Kajhöjd: 2,50 meter")
+  kaj5.addTo(mymap).bindPopup("<h1><b>Kaj 601</b></h1>" + "Sjökortsdjup: 11,0 meter" + "</br> Max djupgående: 10,50 meter" + "</br> Maxlängd fartyg: 290 meter"+ "</br> Riktning kaj: 090/270"+ "</br> Kajhöjd: 2,50 meter")
+  kaj6.addTo(mymap).bindPopup("<h1><b>Kaj 640</b></h1>" + "Sjökortsdjup: 8,0 meter" + "</br> Max djupgående: 7,5 meter" + "</br> Maxlängd fartyg: 170 meter"+ "</br> Riktning kaj: 017/197"+ "</br> Kajhöjd: 2,30 meter") 
 
   
 });    
@@ -697,14 +696,14 @@ containerenergi.on('click', '.smallPolygonLink', function() {
   geo4.remove(mymap);
   geo6.remove(mymap);
   geo7.remove(mymap);
-  /*kaj1.remove(mymap);
+  kaj1.remove(mymap);
   kaj2.remove(mymap);
   kaj3.remove(mymap);
   kaj4.remove(mymap);
   kaj5.remove(mymap);
-  kaj6.remove(mymap);*/
+  kaj6.remove(mymap);
   dropdownskandia.style.display = 'hide';
-  dropdownKPI.style.display = 'hide'
+  //dropdownKPI.style.display = 'hide'
 });    
 // Insert whatever you want into the container, using whichever approach you prefer
 containerenergi.html(`<div class="popup-content "><div class="popup-header"><a>Energihamnen</a></div>Skarvikshamnen, Ryahamnen <br>Bitumen, Torshamnen<br></div><br /> <a href='#' class='smallPolygonLink popup-address'>Visa mer</a>`);
@@ -721,14 +720,14 @@ containerkajer.on('click', '.smallPolygonLink', function() {
   geo4.remove(mymap);
   geo5.remove(mymap);
   geo7.remove(mymap);
-  /*kaj1.remove(mymap);
+  kaj1.remove(mymap);
   kaj2.remove(mymap);
   kaj3.remove(mymap);
   kaj4.remove(mymap);
   kaj5.remove(mymap);
-  kaj6.remove(mymap);*/
+  kaj6.remove(mymap);
   dropdownskandia.style.display = 'hide';
-  dropdownKPI.style.display = 'hide'
+  //dropdownKPI.style.display = 'hide'
 });    
 // Insert whatever you want into the container, using whichever approach you prefer
 containerkajer.html(`<div class="popup-content "><div class="popup-header"><a>Övriga kajer och kryssningskajer</a></div>Kryssningskajer </div><br /> <a href='#' class='smallPolygonLink popup-address'>Visa mer</a>`);
@@ -743,14 +742,14 @@ containerarendals.on('click', '.smallPolygonLink', function() {
   geo4.remove(mymap);
   geo5.remove(mymap);
   geo6.remove(mymap);
- /*kaj1.remove(mymap);
+ kaj1.remove(mymap);
   kaj2.remove(mymap);
   kaj3.remove(mymap);
   kaj4.remove(mymap);
   kaj5.remove(mymap);
-  kaj6.remove(mymap);*/
+  kaj6.remove(mymap);
   dropdownskandia.style.display = 'hide';
-  dropdownKPI.style.display = 'hide';
+  //dropdownKPI.style.display = 'hide';
 });    
 // Insert whatever you want into the container, using whichever approach you prefer
 containerarendals.html(`<div class="popup-content "><div class="popup-header"><a>Arendals- och Älvsborgshamnen</a></div>418 34 Göteborg</div><br /> <a href='#' class='smallPolygonLink popup-address'>Visa mer</a>`);
@@ -813,8 +812,9 @@ var omni= omnivore.csv('/static/ship_positions.csv')
         marker.setIcon(customIcon);
          //create popup with text and image - click image in popup, large  
 //mage displays in fancybox
-popuptext=marker.bindPopup('Tid: '+marker.toGeoJSON().properties.time+'<br>'+"Namn: "+marker.toGeoJSON().properties.name);});}).addTo(mymap);
+popuptext=marker.bindPopup("<img src='" + marker.toGeoJSON().properties.ship_img + "'" + " class=popupImage " + "/>"+ "<h1><b>"+marker.toGeoJSON().properties.name + '</b></h1>' +  "Den nuvarande positionen för "+marker.toGeoJSON().properties.name + " (IMO: "+marker.toGeoJSON().properties.imo +")" + " är "+marker.toGeoJSON().properties.coordinates  + ". " +  "Fartyget är på väg till hamnen "+marker.toGeoJSON().properties.destination + ". Fartyget är av typ '" + marker.toGeoJSON().properties.type + "' och är byggt år " + marker.toGeoJSON().properties.built );});}).addTo(mymap);
 //varpopupText=marker.bindPopup(marker.toGeoJSON().properties.time+','+"<br/>"+marker.toGeoJSON().properties.name+','+"<br/>"+marker.toGeoJSON().properties.latitude+','+" <br/>"+marker.toGeoJSON().properties.longitude+','+"<br/><aclass='fancybox-thumb'rel='fancybox-button'rel='fancybox-thumb'data-fancybox-group='gallery'href='graphic/"+marker.toGeoJSON().properties.longitude+"'><imgsrc='graphic/"+marker.toGeoJSON().properties.latitude+"'style='width:100%'/></a>");});}).addTo(mymap);
+
 
 
 
@@ -827,14 +827,14 @@ zoomToDataButton.addEventListener('click', function() {
     mymap.addLayer(geo6);
     mymap.addLayer(geo7);
     mymap.addLayer(omni);
- /*kaj1.remove(mymap);
-  kaj2.remove(mymap);
-  kaj3.remove(mymap);
-  kaj4.remove(mymap);
-  kaj5.remove(mymap);
-  kaj6.remove(mymap);*/
+    kaj1.remove(mymap);
+    kaj2.remove(mymap);
+    kaj3.remove(mymap);
+    kaj4.remove(mymap);
+    kaj5.remove(mymap);
+    kaj6.remove(mymap);
     dropdownskandia.style.display = 'none';
-    dropdownKPI.style.display = 'none';
+    //dropdownKPI.style.display = 'none';
 
 
     // Add
@@ -859,12 +859,29 @@ var checkbox  = document.querySelector('.checkbox-skepp');
 
 
 
-/*var kaj1 = L.marker([57.691333227598, 11.846802234649658] , {title: "name"});  
-var kaj2 = L.marker([57.68872400420031, 11.848518848419188] , {title: "name"});  
-var kaj3 = L.marker([57.68862077831228, 11.852853298187256] , {title: "name"});  
-var kaj4 = L.marker([57.68864371742391, 11.85675859451294] , {title: "name"});  
-var kaj5 = L.marker([57.69032970237242, 11.866521835327147] , {title: "name"});  
-var kaj6 = L.marker([57.691419242752666, 11.867508888244627] , {title: "name"});   */
+var Icon = L.icon({
+    iconUrl: '/static/kajplats.png',
+
+
+    iconSize:     [70, 70], // size of the icon
+    shadowSize:   [50, 64], // size of the shadow
+    iconAnchor:   [22, 94], // point of the icon which will correspond to marker's location
+    shadowAnchor: [4, 62],  // the same for the shadow
+    popupAnchor:  [-3, -76] // point from which the popup should open relative to the iconAnchor
+});
+
+
+var kaj1 = L.marker([57.691333227598, 11.846802234649658] , {icon:Icon});  
+var kaj2 = L.marker([57.68764400420031, 11.848518848419188] , {icon:Icon});  
+var kaj3 = L.marker([57.68764077831228, 11.852853298187256] , {icon:Icon});  
+var kaj4 = L.marker([57.68765371742391, 11.85675859451294] , {icon:Icon});  
+var kaj5 = L.marker([57.69032970237242, 11.866521835327147] , {icon:Icon});  
+var kaj6 = L.marker([57.691419242752666, 11.867508888244627] , {icon:Icon});   
+
+
+/* var markerTest = L.marker([57.687788, 11.862902] /*, {icon:shipIcon} */
+  /*, {
+    title: "name"});  */
     
 
 
@@ -1214,4 +1231,6 @@ $(document).ready(function () {
   $('.dataTables_length').addClass('bs-select');
   });
 
+
+  //$('.dropdown-toggle').dropdown('toggle');
 
