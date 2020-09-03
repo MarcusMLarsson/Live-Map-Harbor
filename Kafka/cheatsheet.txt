@@ -14,3 +14,7 @@ kafka-console-producer.bat --broker-list localhost:9092 --topic shipdata_topic
 
 # kafka consol consumer
 kafka-console-consumer --bootstrap-server localhost:9092 --shipdata_topic --from-beginning
+
+
+# Delete messages
+

@@ -614,7 +614,7 @@ function onEachFeature(feature, layer) {
 
    
     function getAreaColor(feature){
-      console.log(feature)
+      //console.log(feature)
       switch (feature.properties.Name){
         case 'HamnAB' : return '#0056b3' ;
         case 'Logistik' : return '#c8374d' ;
@@ -856,10 +856,11 @@ var checkbox  = document.querySelector('.checkbox-skepp');
 
 
 
+
+ 
+
 var Icon = L.icon({
     iconUrl: '/static/kajplats.png',
-
-
     iconSize:     [70, 70], // size of the icon
     shadowSize:   [50, 64], // size of the shadow
     iconAnchor:   [22, 94], // point of the icon which will correspond to marker's location
@@ -876,226 +877,6 @@ var kaj5 = L.marker([57.69032970237242, 11.866521835327147] , {icon:Icon});
 var kaj6 = L.marker([57.691419242752666, 11.867508888244627] , {icon:Icon});   
 
 
-/* var markerTest = L.marker([57.687788, 11.862902] /*, {icon:shipIcon} */
-  /*, {
-    title: "name"});  */
-    
-
-
-/*var kaj1 = L.circle([57.691333227598, 11.846802234649658], 40, {
-  color: 'blue',
-  fillColor: '#0056b3',
-  fillOpacity: 0.5
-})
-
-var kaj2 = L.circle([57.68872400420031, 11.848518848419188], 40, {
-  color: 'blue',
-  fillColor: '#0056b3',
-  fillOpacity: 0.5
-})
-
-
-var kaj3 = L.circle([57.68862077831228, 11.852853298187256], 40, {
-  color: 'blue',
-  fillColor: '#0056b3',
-  fillOpacity: 0.5
-})
-
-
-var kaj4 = L.circle([57.68864371742391, 11.85675859451294], 40, {
-  color: 'blue',
-  fillColor: '#0056b3',
-  fillOpacity: 0.5
-})
-
-
-var kaj5 = L.circle([57.69032970237242, 11.866521835327147], 40, {
-  color: 'blue',
-  fillColor: '#0056b3',
-  fillOpacity: 0.5
-}) 
-  
-
-var kaj6 = L.circle([57.691419242752666, 11.867508888244627], 40, {
-  color: 'blue',
-  fillColor: '#0056b3',
-  fillOpacity: 0.5
-})*/ 
-
-
-
-
-/*
-// Checkbox
-var checkbox = document.querySelector('.checkbox-gbghamn');
-checkbox.addEventListener('click', function() {
-    //mymap.setView([57.691728895618716, 11.856651306152344], 15.3)
-
-    if (mymap.hasLayer(geo1)) {
-        mymap.removeLayer(geo1);
-    } else {
-        mymap.addLayer(geo1);
-    };
-})
-
-var checkbox = document.querySelector('.checkbox-logistik');
-checkbox.addEventListener('click', function() {
-    //mymap.setView([57.691728895618716, 11.856651306152344], 15.3)
-
-    if (mymap.hasLayer(geo2)) {
-        mymap.removeLayer(geo2);
-    } else {
-        mymap.addLayer(geo2);
-    };
-})
-
-var checkbox = document.querySelector('.checkbox-raff');
-checkbox.addEventListener('click', function() {
-    //mymap.setView([57.691728895618716, 11.856651306152344], 15.3)
-
-    if (mymap.hasLayer(geo3)) {
-        mymap.removeLayer(geo3);
-    } else {
-        mymap.addLayer(geo3);
-    };
-})
-
-
-var checkbox = document.querySelector('.checkbox-skepp');
-checkbox.addEventListener('click', function() {
-    //mymap.setView([57.691728895618716, 11.856651306152344], 15.3)
-
-    if (mymap.hasLayer(omni)) {
-        mymap.removeLayer(omni);
-    } else {
-        mymap.addLayer(omni);
-    };
-}) 
-
-
-
-
-// Radio buttons
-var zoomToDataButton = document.querySelector('.zoom-to-skandiahamnen');
-zoomToDataButton.addEventListener('click', function() {
-    mymap.flyTo([57.693728895618716, 11.856651306152344], 15)
-
-    // Remove
-    geo1.remove(mymap);
-    geo2.remove(mymap);
-    geo3.remove(mymap);
-    geo5.remove(mymap);
-    geo6.remove(mymap);
-    geo7.remove(mymap);
-    omni.remove(mymap);
-
-
-    // Add
-    mymap.addLayer(geo4);
-})
-
-
-var zoomToDataButton = document.querySelector('.zoom-to-energihamnen');
-zoomToDataButton.addEventListener('click', function() {
-    mymap.flyTo([57.68966151114839, 11.85002604675293], 14)
-
-    // Remove
-    geo1.remove(mymap);
-    geo2.remove(mymap);
-    geo3.remove(mymap);
-    geo4.remove(mymap);
-    geo6.remove(mymap);
-    geo7.remove(mymap);
-    omni.remove(mymap);
-
-    // Add
-    mymap.addLayer(geo5);
-})
-
-
-
-var zoomToDataButton = document.querySelector('.zoom-to-kajer');
-zoomToDataButton.addEventListener('click', function() {
-    mymap.flyTo([57.69999151114839, 11.93202604675293], 15)
-
-    // Remove
-    geo1.remove(mymap);
-    geo2.remove(mymap);
-    geo3.remove(mymap);
-    geo4.remove(mymap);
-    geo5.remove(mymap);
-    geo7.remove(mymap);
-    omni.remove(mymap);
-
-    // Add
-    mymap.addLayer(geo6);
-})
-
-
-
-var zoomToDataButton = document.querySelector('.zoom-to-arendals');
-zoomToDataButton.addEventListener('click', function() {
-    mymap.flyTo([57.69266151114839, 11.83182604675293], 16)
-
-    // Remove
-    geo1.remove(mymap);
-    geo2.remove(mymap);
-    geo3.remove(mymap);
-    geo4.remove(mymap);
-    geo5.remove(mymap);
-    geo6.remove(mymap);
-    omni.remove(mymap);
-
-    // Add
-    mymap.addLayer(geo7);
-    $("#inlineCheckbox1").prop("checked", true);
-})
-
-
-var zoomToDataButton = document.querySelector('.zoom-to-home');
-zoomToDataButton.addEventListener('click', function() {
-    mymap.flyTo([57.710088, 11.900902], 12.8);
-
-
-    // Remove
-    geo1.remove(mymap);
-    geo2.remove(mymap);
-    geo3.remove(mymap);
-    geo4.remove(mymap);
-    geo5.remove(mymap);
-    geo6.remove(mymap);
-    geo7.remove(mymap);
-    omni.remove(mymap);
-
-    // Add
-    mymap.addLayer(geo1);
-    mymap.addLayer(geo2);
-    mymap.addLayer(geo3);
-    mymap.addLayer(omni);
-    
-
-    // disables checkboxes when radio button is active
-
-})
-
-*/
-
-
-
-// disables checkboxes when radio button is active
-//$('input[type="radio"]').change(function() {
-  //if ($(this).is(':checked')){ //radio is now checked
-     // $('input[type="checkbox"]').prop('checked', false); //unchecks all checkboxes
- // }
-//});
-
-/*$('input[type="radio"]').change(function() {
-  if ($(this).is(':checked')){ //radio is now checked
-      $('input[type="checkbox"]').prop('checked', true); //unchecks all checkboxes
-  }
-}); */
-
-
 
 $(document).ready(function(){
   $('.my-div').hide();
@@ -1110,80 +891,18 @@ $(document).ready(function(){
 }); 
 
 
-/*(function() {
-	var control = new L.Control({position:'topright'});
-	control.onAdd = function(mymap) {
-			var azoom = L.DomUtil.create('a','resetzoom');
-			azoom.innerHTML = "[Reset Zoom]";
-			L.DomEvent
-				.disableClickPropagation(azoom)
-				.addListener(azoom, 'click', function() {
-					mymap.setView(mymap.options.center, mymap.options.zoom);
-				},azoom);
-			return azoom;
-		};
-	return control;
-}())
-.addTo(mymap);
 
+var customIcon1 = L.icon({
+  iconUrl: '/static/fartyg.svg',
+  iconSize: [40, 30], //size of the icon in pixels
+  iconAnchor: [9, 9], //point of the icon which will correspond to marker'slocation (the center)
+  popupAnchor: [0, 0] //point from which the popup should open relative to the iconAnchor
+  });
 
-/*var defaultData = [];
-
-
-fetch("/static/vesselsInPort.json").then(function (response) {
-  return response.json();
-  }).then(function (data) {
-  console.log(data);
-   defaultData  = data[ 'Vessels in port' ]
-  }) */
-
-
-
-
-
-
-/*L.control.scale().addTo(mymap)  */
-
-
-/*L.circle([57.687788, 11.862902], 15.9, {
-  color: 'red',
-  fillColor: '#f03',
-  fillOpacity: 0.5
-}).addTo(mymap).bindPopup("I am a circle.") */
-
-
-/*L.polygon([
-  [57.687788, 11.862902],
-  [57.683788, 11.822902],
-  [57.697788, 11.162902]
-]).addTo(mymap).bindPopup("I am a polygon"); */
-
-
-/* var markerTest = L.marker([57.687788, 11.862902] /*, {icon:shipIcon} */
-  /*, {
-    title: "name"});  */
-
-
-    /*L.control.layers(
-  {
-    'Main': mainLayer,
-    'Grayscale': grayscale,
-    'Satellite': satellite,
-    'Hybrid': test,
-  },
-  {
-    'Göteborgshamn AB': geo1, 
-    'Logistikområden': geo2, 
-    'Raffinaderier': geo3, 
-    'Railwaymap': railWay,
-    'Openstreetmap': openstreetmap,*/
-    /*'Seamap': seaMap, */
- /* }
-).addTo(mymap);  */
-
+  //var kaj1 = L.marker([57.691333227598, 11.846802234649658] , {icon:Icon});  
 
 // KAFKA CODE
-/* mapMarkers1 = [];
+mapMarkers1 = [];
 mapMarkers2 = [];
 mapMarkers3 = [];
 
@@ -1194,12 +913,15 @@ source.addEventListener('message', function(e){
     obj = JSON.parse(e.data);
     console.log(obj);
 
+
+    //popuptext=marker.bindPopup("<img src='" + marker.toGeoJSON().properties.ship_img + "'" + " class=popupImage " + "/>"+ "<h1><b>"+marker.toGeoJSON().properties.name + '</b></h1>' +  "Den nuvarande positionen för "+marker.toGeoJSON().properties.name + " (IMO: "+marker.toGeoJSON().properties.imo +")" + " är "+marker.toGeoJSON().properties.coordinates  + ". " +  "Fartyget är på väg till hamnen "+marker.toGeoJSON().properties.destination + ". Fartyget är av typ '" + marker.toGeoJSON().properties.type + "' och är byggt år " + marker.toGeoJSON().properties.built );});}).addTo(mymap);
+
         
     if(obj.shipline == '00001') {
         for (var i = 0; i < mapMarkers1.length; i++) {
         mymap.removeLayer(mapMarkers1[i]);
         }
-        marker1 = L.marker([obj.latitude, obj.longitude]).addTo(mymap);
+        marker1 = L.marker([obj.latitude, obj.longitude], {icon:customIcon1}).addTo(mymap).bindPopup("<img src='http://www.shipspotting.com/photos/middle/4/0/8/1865804.jpg' class=popupImage>"+ "<h1><b> RONJA </b></h1>"+ "Den nuvarande positionen för RONJA är " + "("+(Math.round(obj.latitude*10000)/10000) + ","+ (Math.round(obj.longitude*10000)/10000) + "). " + "Fartyget är på väg till Göteborgs hamn. " + "Fartyget är av typ 'Tug' och är byggt år 1959. " + "Senaste uppdaterad " + obj.timestamp );
         mapMarkers1.push(marker1);
     }
 
@@ -1207,7 +929,7 @@ source.addEventListener('message', function(e){
         for (var i = 0; i < mapMarkers2.length; i++) {
         mymap.removeLayer(mapMarkers2[i]);
         }
-        marker2 = L.marker([obj.latitude, obj.longitude]).addTo(mymap);
+        marker2 = L.marker([obj.latitude, obj.longitude], {icon:customIcon1}).addTo(mymap);
         mapMarkers2.push(marker2);
     }
 
@@ -1215,18 +937,10 @@ source.addEventListener('message', function(e){
         for (var i = 0; i < mapMarkers3.length; i++) {
         mymap.removeLayer(mapMarkers3[i]);
         }
-        marker3 = L.marker([obj.latitude, obj.longitude]).addTo(mymap);
+        marker3 = L.marker([obj.latitude, obj.longitude], {icon:customIcon1}).addTo(mymap);
         mapMarkers3.push(marker3);
     }
-}, false); */
-$(document).ready(function () {
-  $('#dtBasicExample').DataTable({
-    "pageLength": 5,
-    "searching": false,
-    "lengthChange": false
-  });
-  $('.dataTables_length').addClass('bs-select');
-  });
+}, false); 
 
 
   //$('.dropdown-toggle').dropdown('toggle');

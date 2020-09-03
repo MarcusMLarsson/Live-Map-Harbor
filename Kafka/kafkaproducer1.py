@@ -32,7 +32,7 @@ def generate_checkpoint(coordinates):
         message = json.dumps(data)
         print(message)
         producer.produce(message.encode('ascii'))
-        time.sleep(1)
+        time.sleep(4)
 
         #if bus reaches last coordinate, start from beginning
         if i == len(coordinates)-1:
